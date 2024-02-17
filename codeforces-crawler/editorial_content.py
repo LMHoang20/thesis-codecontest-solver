@@ -4,41 +4,39 @@ import time
 import asyncio
 
 from playwright.async_api import async_playwright
-from const_getter import ConstGetter
+from constants import *
 
-CLEAN_EDITORIAL_URLS_PATH = ConstGetter.get_clean_editorial_urls_path()
-EDITORIAL_CONTENT_PATH = ConstGetter.get_editorial_content_path()
-EDITORIAL_CONTENT_FAIL_PATH = ConstGetter.get_editorial_content_fail_path()
-
-async def crawl(starting_points, success_file, fail_file, offset=0):
+async def crawl(starting_points, success_file, fail_file, offset=0, retry=0):
     async with async_playwright() as pw:              
         browser = await pw.chromium.launch()
         context = await browser.new_context()
         page = await context.new_page()
 
-        for data, i in enumerate(starting_points[offset:]):
+        for i, data in enumerate(starting_points[offset:]):
             url = data['editorial_url']
             problem_url = data['url']
             
             print("Crawling start", url)
             try:
                 await page.goto(url)
-                attempt = 1
+                time.sleep(2)
                 success = True
-                while True:
+                for attempt in range(15):
+                    print("Attempt number", attempt)
                     html = await page.content()
                     content = scrapy.Selector(text=html).xpath('//div[@class="content"]').get()
-                    if "Tutorial is loading..." not in content:
-                        break
-                    else:
-                        print("Attempt fail number", attempt)
-                        attempt += 1
-                        if attempt == 10:
-                            success = False
-                            break
-                        time.sleep(1)
+                    if "Tutorial is loading..." in content:
+                        continue
+                    if "MJXp" in content:
+                        continue
+                    if "$$$" in content:
+                        continue
+                    break
+                else:
+                    success = False
             except Exception:
                 return {
+                    "retry": retry + 1,
                     "offset": offset + i,
                 }
 
@@ -55,7 +53,6 @@ async def crawl(starting_points, success_file, fail_file, offset=0):
         
             await context.clear_cookies()
             print("Crawling done", url)
-
         await browser.close()
 
 def main():
@@ -69,7 +66,13 @@ def main():
         with open(EDITORIAL_CONTENT_FAIL_PATH, 'w') as fail_file:
             result = asyncio.run(crawl(starting_points, success_file, fail_file))
             while result != None:
-                result = asyncio.run(crawl(starting_points, success_file, fail_file, result['offset']))
+                time.sleep(10)
+                if result['retry'] > 3:
+                    fail_file.write(json.dumps(starting_points[result['offset']]))
+                    fail_file.write('\n')
+                    result = asyncio.run(crawl(starting_points, success_file, fail_file, result['offset'] + 1))
+                else:
+                    result = asyncio.run(crawl(starting_points, success_file, fail_file, result['offset'], result['retry']))
 
 if __name__ == "__main__":
     main()

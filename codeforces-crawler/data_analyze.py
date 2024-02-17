@@ -1,6 +1,6 @@
 import json
 
-from const_getter import ConstGetter
+from constants import *
 
 EDITORIAL_POSSIBLE_TITLES = [
     'editorial',
@@ -38,8 +38,6 @@ def extract_editorial_urls(results):
     return urls
 
 if __name__ == "__main__":
-    RAW_EDITORIAL_URLS_PATH = ConstGetter.get_raw_editorial_urls_path()
-    
     with open(RAW_EDITORIAL_URLS_PATH, 'r') as file:
         for line in file:
             data = json.loads(line)
