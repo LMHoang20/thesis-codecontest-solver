@@ -25,15 +25,12 @@ def filter_function(sample):
 
 dataset = dataset.filter(filter_function)
 
-
 print(dataset)
-
 
 contest_ids = set()
 for sample in dataset:
     contest_ids.add(sample['cf_contest_id'])
-
-
+    
 print(len(contest_ids))
 
 with open(PROBLEM_URLS_PATH, 'w') as f:

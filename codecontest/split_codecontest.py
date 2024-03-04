@@ -15,14 +15,14 @@ def filter_function(sample):
     return sample['source'] == 2 and \
         len(sample['public_tests']['input']) > 0 and \
         len(sample['private_tests']['input']) > 0 and \
+        len(sample['solutions']) > 0 and \
+        len(sample['incorrect_solutions']) > 0 and \
         sample['cf_contest_id'] > 0 and \
         sample['cf_index'] != '' and \
         sample['input_file'] == '' and \
         sample['output_file'] == ''
 
 dataset = dataset.filter(filter_function)
-
-dataset = dataset[:10]
 
 print(dataset)
 
@@ -34,48 +34,55 @@ language_dict = {
     4: "java",
 }
 
-def format(description, language, code, correct):
-    return f"""### Instruction:
-You are a contestant in a programming contest on Codeforces. You have to solve the problem described below.
-
-### Description:
-{description}
-
-### Settings:
+def format(language, code, correct):
+    return f"""### Settings:
 Language: {language_dict[language]}
-Correct: {correct} 
+Correct: {correct}
+Editorial: False
 
 ### Code:
 {code}
 """
 
-def augment(sample):
-    print(sample)
-    print(sample['solutions'])
-    print(type(sample['solutions']))
-    correct_solutions = [
-        format(sample['description'], language, code, True) 
-        for language, code 
-        in zip(
-            sample["solutions"]["language"], 
-            sample["solutions"]["solution"]
-        )
-    ]
-    incorrect_solutions = [
-        format(sample['description'], language, code, False) 
-        for language, code 
-        in zip(
-            sample["incorrect_solutions"]["language"], 
-            sample["incorrect_solutions"]["solution"])
-    ]
-    cnt = len(correct_solutions) + len(incorrect_solutions)
-    id = f"{sample['cf_contest_id']}-{sample['cf_index']}"
+def augment(samples):
+    prompts = []
+    indices = []
+    contests = []
+
+    for contest, index, solutions, incorrect_solutions \
+    in zip(samples["cf_contest_id"], samples["cf_index"], samples["solutions"], samples["incorrect_solutions"]):
+        correct_prompt = [
+            format(language, code, True) 
+            for language, code 
+            in zip(
+                solutions["language"], 
+                solutions["solution"]
+            ) 
+        ]
+            
+        incorrect_prompt = [
+            format(language, code, False) 
+            for language, code 
+            in zip(
+                incorrect_solutions["language"], 
+                incorrect_solutions["solution"]
+            )
+        ]
+            
+        cnt = len(correct_prompt) + len(incorrect_prompt)
+        contests += [contest] * cnt
+        indices += [index] * cnt
+        prompts += correct_prompt + incorrect_prompt
+    
     return {
-        "id": [id] * cnt,
-        "prompt": correct_solutions + incorrect_solutions,
+        "contest": contests,
+        "index": indices,
+        "prompt": prompts
     }
 
 dataset = dataset.map(augment, batched=True, remove_columns=dataset.column_names)
+
+print(dataset)
 
 login(HF_WRITE_TOKEN)
 
