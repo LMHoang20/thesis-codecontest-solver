@@ -1,0 +1,6 @@
+Edge Cases:
+
+- Multiple Solutions
+- Analogy / Solving a problem by solving a similar problem
+- Lots of Proof
+- Casework

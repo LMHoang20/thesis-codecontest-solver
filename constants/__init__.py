@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 HF_READ_TOKEN = os.getenv('HF_READ_TOKEN')
+HF_WRITE_TOKEN = os.getenv('HF_WRITE_TOKEN')
 
 RAW_EDITORIAL_URLS_PATH = os.getenv('RAW_EDITORIAL_URLS_PATH')
 CLEAN_EDITORIAL_URLS_PATH = os.getenv('CLEAN_EDITORIAL_URLS_PATH')

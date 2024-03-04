@@ -39,6 +39,10 @@ def handle_span(element):
                 result = f"\n\n## {result}"
             case "tex-font-style-subsection":
                 result = f"\n\n### {result}"
+            case "tex-font-size-small":
+                result = f"{result}"
+            case "tex-font-size-large":
+                result = f"{result}"
             case "tex-span":
                 result = f"{result}"
             case "legendary-user-first-letter":
@@ -164,7 +168,9 @@ def handle_tag(tag, element):
         case 'dd':
             return f"{parse(element)}"
         case 'img':
-            raise Exception(f'Image tag: {element.prettify()}')
+            alt = element.get('alt', '')
+            src = element.get('src', '')
+            return f"![{alt}]({src})"
         case _:
             raise Exception(f'Unknown tag: {tag}, {element.prettify()}')
 

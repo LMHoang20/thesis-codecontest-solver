@@ -1,14 +1,13 @@
-# %%
 import datasets
+import json
 
-# %%
-# from constants import *
+
 from huggingface_hub import login
-from constants import *
+from constants import *  
 
 login(HF_READ_TOKEN)
 
-# %%
+
 dataset_name = 'deepmind/code_contests'
 split = 'train'
 cache_dir = 'cache'
@@ -26,23 +25,26 @@ def filter_function(sample):
 
 dataset = dataset.filter(filter_function)
 
-# %%
+
 print(dataset)
 
-# %%
-# with open(PROBLEM_URLS_PATH, 'w') as f:
-    # for sample in dataset:
-        # url = f"https://codeforces.com/problemset/problem/{sample['cf_contest_id']}/{sample['cf_index']}"
-        # f.write(url + '\n')
 
-# %%
 contest_ids = set()
 for sample in dataset:
     contest_ids.add(sample['cf_contest_id'])
 
+
 print(len(contest_ids))
 
-# %%
+with open(PROBLEM_URLS_PATH, 'w') as f:
+    for sample in dataset:
+        data = {
+            "url": f"https://codeforces.com/problemset/problem/{sample['cf_contest_id']}/{sample['cf_index']}",
+            "cf_contest_id": sample['cf_contest_id'],
+            "cf_index": sample['cf_index'],
+            "name": sample['name']
+        }
+        f.write(json.dumps(data) + '\n')
 
 
 

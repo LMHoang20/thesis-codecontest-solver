@@ -1,5 +1,6 @@
 import scrapy
 import os
+import json
 from dotenv import load_dotenv
 
 class EditorialURLSpider(scrapy.Spider):
@@ -12,7 +13,8 @@ class EditorialURLSpider(scrapy.Spider):
 
     with open(PROBLEM_URLS_PATH, "r") as file:
         for line in file:
-            start_urls.append(line.strip())
+            data = json.loads(line)
+            start_urls.append(data["url"])
 
     def start_requests(self):
         for url in self.start_urls:
