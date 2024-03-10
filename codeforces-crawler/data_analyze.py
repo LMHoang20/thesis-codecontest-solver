@@ -3,11 +3,7 @@ import json
 from constants import *
 
 EDITORIAL_POSSIBLE_TITLES = [
-    'editorial',
-    'tutorial',
-    'разбор',
-    't (en)',
-    'e (en)'
+    'editorial', 'tutorial', 'разбор', 't (en)', 'e (en)'
 ]
 
 BLACK_LIST = [
@@ -20,6 +16,7 @@ no_material = []
 no_editorial = []
 editorial_urls = []
 special_cases = []
+
 
 def extract_editorial_urls(results):
     urls = []
@@ -36,6 +33,7 @@ def extract_editorial_urls(results):
                 continue
             urls.append(result['url'])
     return urls
+
 
 if __name__ == "__main__":
     with open(RAW_EDITORIAL_URLS_PATH, 'r') as file:
@@ -58,7 +56,6 @@ if __name__ == "__main__":
                 no_editorial.append(data)
             else:
                 special_cases.append(data)
-                
 
     with open('potentially-no-editorial.txt', 'w') as file:
         for data in no_editorial:

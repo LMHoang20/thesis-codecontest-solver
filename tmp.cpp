@@ -1,118 +1,62 @@
-
 #include <iostream>
-#include <cstring>
-#include <algorithm>
-#include <vector>
-#include <queue>
+#include <limits>
+
 using namespace std;
-typedef pair<int,int> ii;
-const int N = 2e5+5, INF = 1<<30;
-ii t[N<<2], a[N];
-int P[N], lazy[N<<2], ans[N];
-int n;
-queue<int> Q;
-void build(int v, int tl, int tr){
-    if (tl == tr){
-        t[v] = {tl, tl};
-        lazy[v] = 0;
-        return;
-    }
-    if (tl > tr) return;
-    int tm = (tl+tr)>>1;
-    build(v<<1, tl, tm);
-    build(v<<1|1, tm+1, tr);
-    t[v].first = min(t[v<<1].first, t[v<<1|1].first);
-    t[v].second = max(t[v<<1].second, t[v<<1|1].second);
-    lazy[v] = 0;
-}
-void update(int v, int tl, int tr, int l, int r, int u){
-    if (lazy[v]!=0){
-        t[v].first += lazy[v];
-        t[v].second += lazy[v];
-        if (tl != tr){
-            lazy[v<<1] += lazy[v];
-            lazy[v<<1|1] += lazy[v];
-        }
-        lazy[v] = 0;
-    }
-    if (tl > tr || tr < l || r < tl) return;
-    if (l <= tl && tr <= r){
-        t[v].first += u;
-        t[v].second += u;
-        if (tl == tr) return;
-        lazy[v<<1] += u;
-        lazy[v<<1|1] += u;
-        return;
-    }
-    int tm = (tl+tr)/2;
-    update(v<<1,tl,tm,l,r,u);
-    update(v<<1|1,tm+1,tr,l,r,u);
-    t[v].first = min(t[v<<1].first, t[v<<1|1].first);
-    t[v].second = max(t[v<<1].second, t[v<<1|1].second);
-}
-ii get(int v, int tl, int tr, int l, int r){
-    if (lazy[v]!=0){
-        t[v].first += lazy[v];
-        t[v].second += lazy[v];
-        if (tl != tr){
-            lazy[v<<1] += lazy[v];
-            lazy[v<<1|1] += lazy[v];
-        }
-        lazy[v] = 0;
-    }
-    if (tl > tr || tr < l || r < tl) return {INF, -INF};
-    if (l <= tl && tr <= r) return t[v];
-    int tm = (tl+tr)/2;
-    ii A = get(v<<1,tl,tm,l,r);
-    ii B = get(v<<1|1,tm+1,tr,l,r);
-    ii res;
-    res.first = min(A.first, B.first);
-    res.second = max(A.second, B.second);
-    return res;
-}
-int main(){
-    ios::sync_with_stdio(0);
-    cin.tie(0); cout.tie(0);
+
+int main() {
+  int t;
+
+  // Get the total number of test cases
+  cout << "Enter the number of test cases: ";
+  cin >> t;
+
+  for (int i = 0; i < t; ++i) {
+    int n;
+
+    // Get the size of the array for the current test case
+    cout << "Enter the size of the array for test case " << i + 1 << ": ";
     cin >> n;
-    for(int i=1;i<=n;++i){
-        cin >> a[i].first;
-        a[i].second = i;
+
+    int a[n]; // Array to store input numbers
+    int count_negative = 0, count_zero = 0, count_positive = 0;
+
+    // Read elements of the array
+    cout << "Enter elements of the array (space-separated): ";
+    for (int j = 0; j < n; ++j) {
+      cin >> a[j];
+
+      if (a[j] < 0) {
+        count_negative++;
+      } else if (a[j] == 0) {
+        count_zero++;
+      } else {
+        count_positive++;
+      }
     }
-    for(int i=0;i<=n;++i) P[i] = i;
-    sort(a+1, a+1+n);
-    build(1, 0, n);
-    for(int i=1;i<=n;++i){
-        int j = i-1;
-        if (j>0){
-            Q.push(a[j].second);
-            if (a[j].first != a[i].first){
-                while(!Q.empty()){
-                    update(1,0,n,Q.front(),n,-2);
-                    Q.pop();
-                }
-            }
-        }
-        ii A = get(1,0,n,0,a[i].second-1);
-        ii B = get(1,0,n,a[i].second,n);
-        ans[a[i].second] = (B.second - A.first);
+
+    // Determine minimum operations
+    int min_operations = 0;
+    if (count_zero > 0 || count_negative % 2 != 0) {
+      // No operations needed if there's a zero or odd negative numbers
+      min_operations = 0;
+    } else if (count_positive > 0) {
+      // One operation needed if only positive numbers and even negatives
+      min_operations = 1;
     }
-    while(!Q.empty()) Q.pop();
-    sort(a+1, a+1+n, greater<ii>());
-    build(1, 0, n);
-    for(int i=1;i<=n;++i){
-        int j = i-1;
-        if (j>0){
-            Q.push(a[j].second);
-            if (a[j].first != a[i].first){
-                while(!Q.empty()){
-                    update(1,0,n,Q.front(),n,-2);
-                    Q.pop();
-                }
-            }
-        }
-        ii A = get(1,0,n,0,a[i].second-1);
-        ii B = get(1,0,n,a[i].second,n);
-        ans[a[i].second] = max(ans[a[i].second], B.second - A.first - 1);
+
+    // Output
+    cout << "Test Case " << i + 1 << ":" << endl;
+    cout << "Minimum operations needed: " << min_operations << endl;
+
+    // Print instructions for one operation (if applicable)
+    if (min_operations == 1) {
+      int index_to_change = 0; // Assuming we can change the first element
+
+      cout << "Operation: Change element at index " << index_to_change << " to 0." << endl;
     }
-    for(int i=1;i<=n;++i) cout << (ans[i]>>1) << ' ';
+
+    cout << endl;
+  }
+
+  return 0;
 }

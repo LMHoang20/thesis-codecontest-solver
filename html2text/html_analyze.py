@@ -2,8 +2,9 @@ import bs4
 import json
 import os
 
-from constants import *  
+from constants import *
 from lxml import etree
+
 
 def mathml2latex_yarosh(equation):
     xslt_file = os.path.join("mathconverter", "xsl_yarosh", "mmltex.xsl")
@@ -12,6 +13,18 @@ def mathml2latex_yarosh(equation):
     transform = etree.XSLT(xslt)
     newdom = transform(dom)
     return str(newdom)
+
+
+def extract_element_text(element):
+    if isinstance(element, bs4.NavigableString):
+        return element.string
+    for child in element.children:
+        if isinstance(child, bs4.NavigableString):
+            return child.string
+        if isinstance(child, bs4.Tag):
+            return extract_element_text(child)
+    raise Exception(f'Unknown type: {type(element)}, {element}')
+
 
 def handle_span(element):
     if "data-mathml" in element.attrs:
@@ -62,8 +75,11 @@ def handle_span(element):
             case "":
                 result = result
             case _:
-                raise Exception(f'Unknown span class: {element["class"]}, {element.prettify()}')
+                raise Exception(
+                    f'Unknown span class: {element["class"]}, {element.prettify()}'
+                )
     return result
+
 
 def handle_div(element):
     if "class" not in element.attrs:
@@ -92,8 +108,12 @@ def handle_div(element):
             case "epigraph":
                 return ""
             case _:
-                raise Exception(f'Unknown div class: {element["class"]}, {element.prettify()}')
-    raise Exception(f'Multiple div class: {element["class"]}, {element.prettify()}')
+                raise Exception(
+                    f'Unknown div class: {element["class"]}, {element.prettify()}'
+                )
+    raise Exception(
+        f'Multiple div class: {element["class"]}, {element.prettify()}')
+
 
 def handle_tag(tag, element):
     match tag:
@@ -134,7 +154,7 @@ def handle_tag(tag, element):
         case 'ul':
             return parse(element)
         case 'ol':
-            return parse(element)    
+            return parse(element)
         case 'li':
             return f"- {parse(element)}\n"
         case 'sub':
@@ -144,7 +164,7 @@ def handle_tag(tag, element):
         case 'code':
             return f"`{parse(element)}`"
         case 'pre':
-            return f"\n```\n{element.string}\n```\n"
+            return f"\n```\n{element.get_text()}\n```\n"
         case 'hr':
             return "---\n"
         case 'br':
@@ -174,6 +194,7 @@ def handle_tag(tag, element):
         case _:
             raise Exception(f'Unknown tag: {tag}, {element.prettify()}')
 
+
 def parse(element):
     result = ""
     for child in element.children:
@@ -191,6 +212,10 @@ done_urls = set()
 BLACK_LIST = [
     "https://codeforces.com/blog/entry/906",
 ]
+
+print(CLEAN_EDITORIAL_CONTENT_PATH)
+print(EDITORIAL_TO_REVIEW_PATH)
+print(EDITORIAL_CONTENT_PATH)
 
 with open(CLEAN_EDITORIAL_CONTENT_PATH, 'w') as outfile:
     with open(EDITORIAL_TO_REVIEW_PATH, 'w') as review:
@@ -211,21 +236,26 @@ with open(CLEAN_EDITORIAL_CONTENT_PATH, 'w') as outfile:
                     review.write(data['url'])
                     review.write('\n')
                     continue
-                element = soup.select('div.content')[0].select('div.ttypography')[0]
+                element = soup.select('div.content')[0].select(
+                    'div.ttypography')[0]
                 try:
                     content = parse(element)
                     content = content.replace("$$$", "$")
-                    content = content.replace("veryverythinmathspace", "0.05555555555555555em")
-                    content = content.replace("verythinmathspace", "0.1111111111111111em")
-                    content = content.replace("thinmathspace", "0.16666666666666666em")
-                    content = content.replace("mediummathspace", "0.2222222222222222em")
-                    content = content.replace("thickmathspace", "0.2777777777777778em")
-                    content = content.replace("verythickmathspace", "0.3333333333333333em")
-                    content = content.replace("veryverythickmathspace", "0.3888888888888889em") 
-                    out = {
-                        "url": data['url'],
-                        "content": content
-                    }
+                    content = content.replace("veryverythinmathspace",
+                                              "0.05555555555555555em")
+                    content = content.replace("verythinmathspace",
+                                              "0.1111111111111111em")
+                    content = content.replace("thinmathspace",
+                                              "0.16666666666666666em")
+                    content = content.replace("mediummathspace",
+                                              "0.2222222222222222em")
+                    content = content.replace("thickmathspace",
+                                              "0.2777777777777778em")
+                    content = content.replace("verythickmathspace",
+                                              "0.3333333333333333em")
+                    content = content.replace("veryverythickmathspace",
+                                              "0.3888888888888889em")
+                    out = {"url": data['url'], "content": content}
                     json.dump(out, outfile)
                     outfile.write('\n')
                 except Exception as e:

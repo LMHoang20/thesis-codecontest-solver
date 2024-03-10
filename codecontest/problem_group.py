@@ -1,10 +1,11 @@
 import json
 import os
+import shutil
 
 from constants import *
 
 contest = dict()
-    
+
 with open(PROBLEM_URLS_PATH, 'r') as f:
     for line in f:
         data = json.loads(line)
@@ -28,10 +29,13 @@ with open(CLEAN_EDITORIAL_URLS_PATH, 'r') as f:
 for contest_id, problems in contest.items():
     for problem in problems:
         if problem['url'] in problem_to_editorial_url:
-            editorial_url_to_contest[problem_to_editorial_url[problem['url']]] = contest_id
+            editorial_url_to_contest[problem_to_editorial_url[
+                problem['url']]] = contest_id
             break
 
 done = set()
+
+os.makedirs('data/tmp-contests', exist_ok=True)
 
 with open(CLEAN_EDITORIAL_CONTENT_PATH, 'r') as editorial_file:
     for line in editorial_file:
@@ -42,16 +46,39 @@ with open(CLEAN_EDITORIAL_CONTENT_PATH, 'r') as editorial_file:
         done.add(contest_id)
         problems = contest[contest_id]
         contest_id = str(contest_id)
-        if os.path.exists(os.path.join('data/contests', contest_id)):
-            continue
-        os.makedirs(os.path.join('data/contests', contest_id))
-        with open(os.path.join('data/contests', contest_id, 'editorial.md'), 'w') as f:
-            for problem in problems:
-                f.write(f'\n\n## [{problem["cf_index"]}. {problem["name"]}]({problem["url"]})\n\n')
-                with open(os.path.join('data/contests', contest_id, problem['cf_index'] + '.md'), 'w') as f2:
-                    f2.write(f'# {problem["cf_index"]}: {problem["name"]}\n\n')
-            f.write(editorial_data['content'])
+        editoiral_url = editorial_data['url']
+        sus = ""
+        for dir in os.listdir('data/contests'):
+            if dir.startswith(f"{contest_id}-"):
+                sus = dir
+                break
+        if sus == "":
+            with open(
+                    os.path.join('data/contests', contest_id, 'editorial.md'),
+                    'w') as f:
+                f.write(
+                    f'Editorial URL: [{editoiral_url}]({editoiral_url})\n\n')
+                for problem in problems:
+                    f.write(
+                        f'\n\n## [{problem["cf_index"]}. {problem["name"]}]({problem["url"]})\n\n'
+                    )
+                    # with open(os.path.join('data/contests', contest_id, problem['cf_index'] + '.md'), 'w') as f2:
+                    # f2.write(f'# {problem["cf_index"]}: {problem["name"]}\n\n')
+                f.write(editorial_data['content'])
+        else:
+            if os.path.exists(os.path.join('data/contests', contest_id)):
+                shutil.move(os.path.join('data/contests', contest_id),
+                            os.path.join('data/tmp-contests', contest_id))
+            with open(os.path.join('data/contests', sus, 'editorial.md'),
+                      'w') as f:
+                f.write(
+                    f'Editorial URL: [{editoiral_url}]({editoiral_url})\n\n')
+                for problem in problems:
+                    f.write(
+                        f'\n\n## [{problem["cf_index"]}. {problem["name"]}]({problem["url"]})\n\n'
+                    )
+                    # with open(os.path.join('data/contests', contest_id, problem['cf_index'] + '.md'), 'w') as f2:
+                    # f2.write(f'# {problem["cf_index"]}: {problem["name"]}\n\n')
+                f.write(editorial_data['content'])
 
-            
-                        
-print(len(done))       
+print(len(done))

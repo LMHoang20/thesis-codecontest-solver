@@ -12,7 +12,6 @@ BOT_NAME = "editorial"
 SPIDER_MODULES = ["editorial.spiders"]
 NEWSPIDER_MODULE = "editorial.spiders"
 
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "editorial (+http://www.yourdomain.com)"
 

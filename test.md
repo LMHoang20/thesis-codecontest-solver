@@ -1,100 +1,45 @@
-**Premise**:
-- Nikita had a word consisting of exactly 3 lowercase Latin letters.
-- The letters in the Latin alphabet are numbered from 1 to 26, where the letter "a" has the index 1, and the letter "z" has the index 26.
-- He encoded this word as the sum of the positions of all the characters in the alphabet.
-- However, this encoding turned out to be ambiguous
-- Determine the lexicographically smallest word of 3 letters that could have been encoded.
-- A string 𝑎 is lexicographically smaller than a string 𝑏 if and only if one of the following holds:
-    - 𝑎 is a prefix of 𝑏, but 𝑎≠𝑏;
-    - in the first position where 𝑎 and 𝑏 differ, the string 𝑎 has a letter that appears earlier in the alphabet than the corresponding letter in 𝑏.
-- The first line of the input contains a single integer 𝑡 (1≤𝑡≤100) — the number of test cases in the test.
-- This is followed by the descriptions of the test cases.
-    - The first and only line of each test case contains an integer 𝑛 (3≤𝑛≤78) — the encoded word.
-- For each test case, output the lexicographically smallest three-letter word that could have been encoded on a separate line.
+Given a competitive programming problem and an observation, the task is to verify if the observation is correct based on the description of the problem.
 
-**Example**
+### Description
 
-Test case 1:
-```
-1
-24
-```
-```
-aav
-```
-Test case 2:
-```
-1
-70
-```
-```
-rzz
-```
-Test case 3:
-```
-1
-3
-```
-```
-aaa
-```
-Test case 4:
-```
-1
-55
-```
-```
-czz
-```
-Test case 5:
-```
-1
-48
-```
-```
-auz
-```
+Berland crossword is a puzzle that is solved on a square grid with 𝑛 rows and 𝑛 columns. Initially all the cells are white.
 
-**Steps**
+To solve the puzzle one has to color some cells on the border of the grid black in such a way that:
 
-- input `t`
-- loop through `t`
-    - input `n`
+exactly 𝑈 cells in the top row are black;
+exactly 𝑅 cells in the rightmost column are black;
+exactly 𝐷 cells in the bottom row are black;
+exactly 𝐿 cells in the leftmost column are black.
 
+Note that you can color zero cells black and leave every cell white.
 
-**Code**
-```cpp
-#include<bits/stdc++.h>
-using namespace std;
+Your task is to check if there exists a solution to the given puzzle.
 
-void solve(){
-    cout << "input 2: none" << '\n';
-    int n, sz = 26;
-    cin >> n;
-    cout << "output 2: " << n << '\n';
-    string mins = "zzz", cur;
-    cout << 
-    for(int i = 0; i < sz; i++){
-        for(int j = 0; j < sz; j++){
-            for(int k = 0; k < sz; k++){
-                if(i + j + k + 3 == n){
-                    cur += char(i + 'a');
-                    cur += char(j + 'a');
-                    cur += char(k + 'a');
-                    mins = cur;
-                    break;
-                }
-            }
-        }
-    }
-    cout << mins << "\n";
- 
-}
-int main(){
-    int t;
-    cin >> t;
-    while(t--) {
-        solve();
-    }
-}
-```
+Input
+The first line contains a single integer 𝑡 (1≤𝑡≤1000) — the number of testcases.
+
+Then the descriptions of 𝑡 testcases follow.
+
+The only line of each testcase contains 5 integers 𝑛,𝑈,𝑅,𝐷,𝐿 (2≤𝑛≤100; 0≤𝑈,𝑅,𝐷,𝐿≤𝑛).
+
+Output
+For each testcase print "YES" if the solution exists and "NO" otherwise.
+
+You may print every letter in any case you want (so, for example, the strings yEs, yes, Yes and YES are all recognized as positive answer).
+
+Example
+input
+4
+5 2 5 3 1
+3 0 0 0 0
+4 4 1 4 0
+2 1 1 1 1
+output
+YES
+YES
+NO
+YES
+
+### Observation
+
+Consider some corner of the picture. If it's colored black, then it contributes to counts to both of the adjacent sides. Otherwise, it contributes to none. All the remaining cells can contribute only to the side they are on. There are $n-2$ of such cells on each side.

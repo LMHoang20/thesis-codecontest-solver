@@ -3,6 +3,7 @@ import os
 import json
 from dotenv import load_dotenv
 
+
 class EditorialURLSpider(scrapy.Spider):
     name = "editorial_url"
     allowed_domains = ["codeforces.com"]
@@ -34,10 +35,8 @@ class EditorialURLSpider(scrapy.Spider):
                 url = response.urljoin(url)
             title = selector.xpath("string()").get()
             results.append({"title": title, "url": url})
-            
+
         yield {
             "result": results,
             "url": response.url,
         }
-            
-    

@@ -21,9 +21,10 @@ with open(file_name, 'r') as f:
             left_parenthesis = data.rfind('(', 0, dollar_1)
             # first parenthesis to the right of dollar_2
             right_parenthesis = data.find(')', dollar_2)
-            if left_parenthesis != -1 and right_parenthesis != -1 and "latex:" in data[left_parenthesis:right_parenthesis]:
+            if left_parenthesis != -1 and right_parenthesis != -1 and "latex:" in data[
+                    left_parenthesis:right_parenthesis]:
                 latex_fomula = data[dollar_1:dollar_2 + 1]
-                result += data[:left_parenthesis] + latex_fomula
+                result += data[:left_parenthesis - 1] + latex_fomula
                 data = data[right_parenthesis + 1:]
             else:
                 print("WTF")
@@ -31,28 +32,33 @@ with open(file_name, 'r') as f:
             result += data
             break
 
-        
-        
-            
 code = code.strip()
 
-if code.startswith("```cpp"):
-    code = code[len("```cpp"):]
-if code.endswith("```"):
-    code = code[:-len("```")]
+if '```cpp' in code:
+    if code.startswith("```cpp"):
+        code = code[len("```cpp"):]
+    if code.endswith("```"):
+        code = code[:-len("```")]
 
-if code != "":
-    with open("tmp.cpp", 'w') as f:
-        f.write(code)
-
-    subprocess.run(["python", "normalize_code.py", "tmp.cpp"])
-
-    with open("tmp.cpp", 'r') as f:
-        code = f.read()
-
-with open(file_name, 'w') as f:
-    f.write(result)
     if code != "":
-        f.write("\n\n# TUTORIAL CODE XXX\n\n```cpp")
-        f.write(code)
-        f.write("```\n")
+        with open("tmp.cpp", 'w') as f:
+            f.write(code)
+
+        subprocess.run(["python", "normalize_code.py", "tmp.cpp"])
+
+        with open("tmp.cpp", 'r') as f:
+            code = f.read()
+
+    with open(file_name, 'w') as f:
+        f.write(result)
+        if code != "":
+            f.write("\n# TUTORIAL CODE XXX\n\n```cpp")
+            f.write(code)
+            f.write("```\n")
+else:
+    with open(file_name, 'w') as f:
+        f.write(result)
+        if code != "":
+            f.write("\n# TUTORIAL CODE XXX\n\n")
+            f.write(code)
+            f.write("\n")
