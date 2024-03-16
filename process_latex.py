@@ -24,7 +24,9 @@ with open(file_name, 'r') as f:
         if dollar_3 != -1 and dollar_4 != -1:
             if "latex:" in data[dollar_2:dollar_3]:
                 latex_fomula = data[dollar_3:dollar_4 + 1]
-                result += data[:dollar_1] + latex_fomula
+                actual_latex_fomula = latex_fomula[1:-1]
+                actual_latex_fomula = actual_latex_fomula.strip()
+                result += data[:dollar_1] + f'${actual_latex_fomula}$'
                 data = data[dollar_4 + 2:]
             else:
                 result += data[:dollar_1 + 1]
@@ -32,7 +34,7 @@ with open(file_name, 'r') as f:
         else:
             result += data
             break
-    
+
 code = code.strip()
 codes = []
 for sep in separator:
@@ -61,7 +63,7 @@ for code in codes:
 
             with open("tmp.cpp", 'r') as f:
                 code = f.read()
-
+    
         processed_codes.append(f"\n```cpp{code}```") 
     else:
         processed_codes.append(code)
