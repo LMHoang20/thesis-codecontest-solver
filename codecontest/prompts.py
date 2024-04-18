@@ -34,9 +34,8 @@ for contest_id, problems in contest.items():
             break
 
 done = set()
-output_dir = 'data/contests-v2'
-os.makedirs(output_dir, exist_ok=True)
 
+os.makedirs('data/prompts', exist_ok=True)
 with open(CLEAN_EDITORIAL_CONTENT_PATH, 'r') as editorial_file:
     for line in editorial_file:
         editorial_data = json.loads(line)
@@ -46,17 +45,19 @@ with open(CLEAN_EDITORIAL_CONTENT_PATH, 'r') as editorial_file:
         done.add(contest_id)
         problems = contest[contest_id]
         contest_id = str(contest_id)
-        editoiral_url = editorial_data['url']
-        contest_dir = os.path.join(output_dir, contest_id)
-        os.makedirs(contest_dir, exist_ok=True)
-        with open(os.path.join(contest_dir, 'editorial.md'), 'w') as f:
-            f.write(f"# Editorial for contest {contest_id}\n\n")
-            f.write(f"Editorial url: {editoiral_url}\n\n")
-            for problem in problems:
-                if problem['url'] in problem_to_editorial_url:
-                    f.write(f"- [{problem['cf_index']}. {problem['name']}]({problem['url']})\n")
-                else:
-                    f.write(f"- {problem['cf_index']}. {problem['name']}\n")
-            f.write(editorial_data['content'])
-
-print(len(done))
+        editorial_url = editorial_data['url']
+        editorial = editorial_data['content'].strip()
+        while '\n\n\n' in editorial:
+            editorial = editorial.replace('\n\n\n', '\n\n')
+        os.makedirs(f'data/prompts/{contest_id}', exist_ok=True)
+        for problem in problems:
+            id = f'{contest_id}_{problem["cf_index"]}. '
+            name = problem['name'][problem['name'].find(id) + len(id):]
+            print(name)
+            with open(f'data/prompts/{contest_id}/{problem["cf_index"]}-prompt.md', 'w') as f:
+                f.write("<TARGET>\n")
+                f.write(f'problem name: {name}\n')
+                f.write("</TARGET>\n")
+                f.write("<EDITORIAL>\n")
+                f.write(editorial)
+                f.write("\n</EDITORIAL>\n")
