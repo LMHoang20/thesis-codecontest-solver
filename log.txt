@@ -1,0 +1,186 @@
+('data/contests-v2/336/B.md', "Author's solution", 'http://pastebin.com/iTr4213i'): start
+('data/contests-v2/681/C.md', 'Code', 'https://ideone.com/1iyHy8'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): failed list index out of range
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): failed list index out of range
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): failed list index out of range
+('data/contests-v2/681/C.md', 'Code', 'https://ideone.com/1iyHy8'): failed
+('data/contests-v2/681/C.md', 'Code', 'https://ideone.com/1iyHy8'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): failed list index out of range
+('data/contests-v2/336/B.md', "Author's solution", 'http://pastebin.com/iTr4213i'): failed 'NoneType' object is not subscriptable
+('data/contests-v2/336/C.md', "Author's solution", 'http://pastebin.com/znNnQF1z'): start
+('data/contests-v2/336/C.md', "Author's solution", 'http://pastebin.com/znNnQF1z'): done
+('data/contests-v2/336/D.md', "Author's solution", 'http://pastebin.com/2cZ2qefM'): start
+('data/contests-v2/336/D.md', "Author's solution", 'http://pastebin.com/2cZ2qefM'): done
+('data/contests-v2/336/A.md', "Author's solution", 'http://pastebin.com/fNz05bHS'): start
+('data/contests-v2/336/A.md', "Author's solution", 'http://pastebin.com/fNz05bHS'): done
+('data/contests-v2/1253/B.md', 'Implementation', 'https://pastebin.com/whyCzpvV'): start
+('data/contests-v2/1253/B.md', 'Implementation', 'https://pastebin.com/whyCzpvV'): done
+('data/contests-v2/1253/F.md', 'Solution 1', 'https://pastebin.com/xrm0MU71'): start
+('data/contests-v2/681/C.md', 'Code', 'https://ideone.com/1iyHy8'): failed
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): start
+('data/contests-v2/1253/F.md', 'Solution 1', 'https://pastebin.com/xrm0MU71'): done
+('data/contests-v2/1253/F.md', 'Solution 2', 'https://pastebin.com/J8c8x2Fg'): start
+('data/contests-v2/681/C.md', 'Code', 'https://ideone.com/1iyHy8'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): failed list index out of range
+('data/contests-v2/1253/F.md', 'Solution 2', 'https://pastebin.com/J8c8x2Fg'): done
+('data/contests-v2/1253/C.md', 'Implementation', 'https://pastebin.com/3hZLq6sP'): start
+('data/contests-v2/1253/C.md', 'Implementation', 'https://pastebin.com/3hZLq6sP'): done
+('data/contests-v2/1253/D.md', 'Implementation', 'https://pastebin.com/Heb9bF7b'): start
+('data/contests-v2/681/C.md', 'Code', 'https://ideone.com/1iyHy8'): done
+('data/contests-v2/1253/D.md', 'Implementation', 'https://pastebin.com/Heb9bF7b'): done
+('data/contests-v2/1253/A.md', 'solution 1', 'https://pastebin.com/TCAqg38G'): start
+('data/contests-v2/1253/A.md', 'solution 1', 'https://pastebin.com/TCAqg38G'): done
+('data/contests-v2/1253/E.md', 'Implementation', 'https://pastebin.com/6FeZb3XH'): start
+('data/contests-v2/1253/E.md', 'Implementation', 'https://pastebin.com/6FeZb3XH'): done
+('data/contests-v2/1326/A.md', 'link', 'https://pastebin.com/KEBHMi12'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): failed list index out of range
+('data/contests-v2/1326/A.md', 'link', 'https://pastebin.com/KEBHMi12'): failed
+('data/contests-v2/1326/E.md', 'link', 'https://pastebin.com/A1gFm627'): start
+('data/contests-v2/1326/E.md', 'link', 'https://pastebin.com/A1gFm627'): failed
+('data/contests-v2/887/B.md', 'Solution', 'https://pastebin.com/W5MBrL5e'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): failed list index out of range
+('data/contests-v2/887/B.md', 'Solution', 'https://pastebin.com/W5MBrL5e'): failed
+('data/contests-v2/887/F.md', 'Solution', 'https://pastebin.com/eM5MCtbZ'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): failed list index out of range
+('data/contests-v2/887/F.md', 'Solution', 'https://pastebin.com/eM5MCtbZ'): failed
+('data/contests-v2/887/C.md', 'First solution', 'https://pastebin.com/G8kAaSVz'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): start
+('data/contests-v2/887/C.md', 'First solution', 'https://pastebin.com/G8kAaSVz'): failed
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): failed list index out of range
+('data/contests-v2/887/C.md', 'Alternative solution', 'https://pastebin.com/guUQaYKE'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): failed list index out of range
+('data/contests-v2/887/C.md', 'Alternative solution', 'https://pastebin.com/guUQaYKE'): failed
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): failed list index out of range
+('data/contests-v2/887/D.md', 'Solution', 'https://pastebin.com/te2R75QA'): start
+('data/contests-v2/887/D.md', 'Solution', 'https://pastebin.com/te2R75QA'): failed
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): failed list index out of range
+('data/contests-v2/887/A.md', 'Solution', 'https://pastebin.com/mKYmrrnm'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): start
+('data/contests-v2/887/A.md', 'Solution', 'https://pastebin.com/mKYmrrnm'): failed
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): failed list index out of range
+('data/contests-v2/887/E.md', 'Solution.', 'https://pastebin.com/1Qkef8JL'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): failed list index out of range
+('data/contests-v2/887/E.md', 'Solution.', 'https://pastebin.com/1Qkef8JL'): failed
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): failed list index out of range
+('data/contests-v2/1136/B.md', 'Code', 'https://pastebin.com/19BUreFe'): start
+('data/contests-v2/1136/B.md', 'Code', 'https://pastebin.com/19BUreFe'): done
+('data/contests-v2/1136/A.md', 'Code', 'https://pastebin.com/caetUqwX'): start
+('data/contests-v2/1136/A.md', 'Code', 'https://pastebin.com/caetUqwX'): done
+('data/contests-v2/1136/E.md', 'Code', 'https://pastebin.com/nGFM2KyW'): start
+('data/contests-v2/1136/E.md', 'Code', 'https://pastebin.com/nGFM2KyW'): done
+('data/contests-v2/946/F.md', 'https://pastebin.com/ctSVxmnD', 'https://pastebin.com/ctSVxmnD'): start
+('data/contests-v2/946/F.md', 'https://pastebin.com/ctSVxmnD', 'https://pastebin.com/ctSVxmnD'): done
+('data/contests-v2/946/G.md', 'https://pastebin.com/BiaFgYx6', 'https://pastebin.com/BiaFgYx6'): start
+('data/contests-v2/946/G.md', 'https://pastebin.com/BiaFgYx6', 'https://pastebin.com/BiaFgYx6'): done
+('data/contests-v2/959/A.md', 'https://pastebin.com/X3D08tg9', 'https://pastebin.com/X3D08tg9'): start
+('data/contests-v2/959/A.md', 'https://pastebin.com/X3D08tg9', 'https://pastebin.com/X3D08tg9'): done
+('data/contests-v2/332/B.md', 'Code', 'http://pastebin.com/FJrik8jC'): start
+('data/contests-v2/332/B.md', 'Code', 'http://pastebin.com/FJrik8jC'): done
+('data/contests-v2/332/C.md', 'Code', 'http://pastebin.com/CzB1v72v'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): failed list index out of range
+('data/contests-v2/332/C.md', 'Code', 'http://pastebin.com/CzB1v72v'): failed
+('data/contests-v2/332/D.md', 'Code', 'http://pastebin.com/cdmkTAxA'): start
+('data/contests-v2/332/D.md', 'Code', 'http://pastebin.com/cdmkTAxA'): done
+('data/contests-v2/332/A.md', 'code', 'http://pastebin.com/hn4wzXj0'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): start
+('data/contests-v2/332/A.md', 'code', 'http://pastebin.com/hn4wzXj0'): done
+('data/contests-v2/332/E.md', 'Code', 'http://pastebin.com/zPmfJJdV'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): failed list index out of range
+('data/contests-v2/332/E.md', 'Code', 'http://pastebin.com/zPmfJJdV'): done
+('data/contests-v2/1325/F.md', 'A solution using degrees', 'https://pastebin.com/1VwZYPCj'): start
+('data/contests-v2/1325/F.md', 'A solution using degrees', 'https://pastebin.com/1VwZYPCj'): done
+('data/contests-v2/1174/A.md', 'https://pastebin.com/FDXTuDdZ', 'https://pastebin.com/FDXTuDdZ'): start
+('data/contests-v2/1174/A.md', 'https://pastebin.com/FDXTuDdZ', 'https://pastebin.com/FDXTuDdZ'): done
+('data/contests-v2/1168/B.md', 'solution', 'https://pastebin.com/ZJA8Y8Z5'): start
+('data/contests-v2/1168/B.md', 'solution', 'https://pastebin.com/ZJA8Y8Z5'): done
+('data/contests-v2/1168/C.md', 'solution', 'https://pastebin.com/QbQa3x4V'): start
+('data/contests-v2/1168/C.md', 'solution', 'https://pastebin.com/QbQa3x4V'): done
+('data/contests-v2/1168/D.md', 'solution', 'https://pastebin.com/5bwnF7En'): start
+('data/contests-v2/1168/D.md', 'solution', 'https://pastebin.com/5bwnF7En'): done
+('data/contests-v2/1168/A.md', 'This solution', 'https://pastebin.com/dDf2JKNd'): start
+('data/contests-v2/1168/A.md', 'This solution', 'https://pastebin.com/dDf2JKNd'): done
+('data/contests-v2/1168/E.md', 'solution', 'https://pastebin.com/S310JdDa'): start
+('data/contests-v2/1168/E.md', 'solution', 'https://pastebin.com/S310JdDa'): done
+('data/contests-v2/540/D.md', 'code', 'http://pastebin.com/3s6dRK3A'): start
+('data/contests-v2/540/D.md', 'code', 'http://pastebin.com/3s6dRK3A'): done
+('data/contests-v2/981/F.md', 'Solution in $O(n \\cdot log L \\cdot log n)$', 'https://pastebin.com/Q7LKS1rN'): start
+('data/contests-v2/981/F.md', 'Solution in $O(n \\cdot log L \\cdot log n)$', 'https://pastebin.com/Q7LKS1rN'): done
+('data/contests-v2/981/G.md', 'Solution', 'https://pastebin.com/LqzHXKkj'): start
+('data/contests-v2/981/G.md', 'Solution', 'https://pastebin.com/LqzHXKkj'): done
+('data/contests-v2/981/C.md', 'solution', 'https://pastebin.com/ybnP74S0'): start
+('data/contests-v2/981/C.md', 'solution', 'https://pastebin.com/ybnP74S0'): done
+('data/contests-v2/981/H.md', 'Solution in $O(n \\sqrt n)$', 'https://pastebin.com/b3h4M9rL'): start
+('data/contests-v2/981/H.md', 'Solution in $O(n \\sqrt n)$', 'https://pastebin.com/b3h4M9rL'): done
+('data/contests-v2/981/H.md', 'Solution in $O(n log^2 n)$', 'https://pastebin.com/0h3SYJJm'): start
+('data/contests-v2/981/H.md', 'Solution in $O(n log^2 n)$', 'https://pastebin.com/0h3SYJJm'): done
+('data/contests-v2/981/D.md', 'solution', 'https://pastebin.com/hj92UH0B'): start
+('data/contests-v2/981/D.md', 'solution', 'https://pastebin.com/hj92UH0B'): done
+('data/contests-v2/975/B.md', 'Solution', 'https://pastebin.com/zdD4NtdF'): start
+('data/contests-v2/975/B.md', 'Solution', 'https://pastebin.com/zdD4NtdF'): done
+('data/contests-v2/975/C.md', 'Solution', 'https://pastebin.com/fcbXrqy4'): start
+('data/contests-v2/975/C.md', 'Solution', 'https://pastebin.com/fcbXrqy4'): done
+('data/contests-v2/975/D.md', 'Solution', 'https://pastebin.com/AKd4c5xt'): start
+('data/contests-v2/975/D.md', 'Solution', 'https://pastebin.com/AKd4c5xt'): done
+('data/contests-v2/975/A.md', 'Solution', 'https://pastebin.com/XUUxYdqB'): start
+('data/contests-v2/975/A.md', 'Solution', 'https://pastebin.com/XUUxYdqB'): done
+('data/contests-v2/975/E.md', 'Solution', 'https://pastebin.com/4VmUcVUR'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): start
+('data/contests-v2/975/E.md', 'Solution', 'https://pastebin.com/4VmUcVUR'): done
+('data/contests-v2/336/B.md', "Author's solution", 'http://pastebin.com/iTr4213i'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): failed list index out of range
+('data/contests-v2/336/B.md', "Author's solution", 'http://pastebin.com/iTr4213i'): done
+('data/contests-v2/1326/A.md', 'link', 'https://pastebin.com/KEBHMi12'): start
+('data/contests-v2/1326/A.md', 'link', 'https://pastebin.com/KEBHMi12'): failed
+('data/contests-v2/1326/E.md', 'link', 'https://pastebin.com/A1gFm627'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): failed list index out of range
+('data/contests-v2/1326/E.md', 'link', 'https://pastebin.com/A1gFm627'): failed
+('data/contests-v2/887/B.md', 'Solution', 'https://pastebin.com/W5MBrL5e'): start
+('data/contests-v2/887/B.md', 'Solution', 'https://pastebin.com/W5MBrL5e'): failed
+('data/contests-v2/887/F.md', 'Solution', 'https://pastebin.com/eM5MCtbZ'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): failed list index out of range
+('data/contests-v2/887/F.md', 'Solution', 'https://pastebin.com/eM5MCtbZ'): failed
+('data/contests-v2/887/C.md', 'First solution', 'https://pastebin.com/G8kAaSVz'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): start
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): failed list index out of range
+('data/contests-v2/618/A.md', 'simulation', '//codeforces.com/contest/618/submission/15669470'): failed more than 10 times, skip
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): start
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): failed list index out of range
+('data/contests-v2/725/F.md', 'code', '//codeforces.com/contest/725/submission/21731928'): failed more than 10 times, skip
+('data/contests-v2/887/C.md', 'First solution', 'https://pastebin.com/G8kAaSVz'): failed
+('data/contests-v2/887/C.md', 'Alternative solution', 'https://pastebin.com/guUQaYKE'): start
+('data/contests-v2/887/C.md', 'Alternative solution', 'https://pastebin.com/guUQaYKE'): failed
+('data/contests-v2/887/D.md', 'Solution', 'https://pastebin.com/te2R75QA'): start
+('data/contests-v2/887/D.md', 'Solution', 'https://pastebin.com/te2R75QA'): failed
+('data/contests-v2/887/A.md', 'Solution', 'https://pastebin.com/mKYmrrnm'): start
+('data/contests-v2/887/A.md', 'Solution', 'https://pastebin.com/mKYmrrnm'): failed
+('data/contests-v2/887/E.md', 'Solution.', 'https://pastebin.com/1Qkef8JL'): start
+('data/contests-v2/887/E.md', 'Solution.', 'https://pastebin.com/1Qkef8JL'): failed
+('data/contests-v2/332/C.md', 'Code', 'http://pastebin.com/CzB1v72v'): start
+('data/contests-v2/332/C.md', 'Code', 'http://pastebin.com/CzB1v72v'): failed
+('data/contests-v2/1326/A.md', 'link', 'https://pastebin.com/KEBHMi12'): start
+('data/contests-v2/1326/A.md', 'link', 'https://pastebin.com/KEBHMi12'): failed
+('data/contests-v2/1326/E.md', 'link', 'https://pastebin.com/A1gFm627'): start
+('data/contests-v2/1326/E.md', 'link', 'https://pastebin.com/A1gFm627'): failed
+('data/contests-v2/887/B.md', 'Solution', 'https://pastebin.com/W5MBrL5e'): start
+('data/contests-v2/887/B.md', 'Solution', 'https://pastebin.com/W5MBrL5e'): failed
+('data/contests-v2/887/F.md', 'Solution', 'https://pastebin.com/eM5MCtbZ'): start
+('data/contests-v2/887/F.md', 'Solution', 'https://pastebin.com/eM5MCtbZ'): failed
+('data/contests-v2/887/C.md', 'First solution', 'https://pastebin.com/G8kAaSVz'): start
+('data/contests-v2/887/C.md', 'First solution', 'https://pastebin.com/G8kAaSVz'): failed
+('data/contests-v2/887/C.md', 'Alternative solution', 'https://pastebin.com/guUQaYKE'): start
+('data/contests-v2/887/C.md', 'Alternative solution', 'https://pastebin.com/guUQaYKE'): failed

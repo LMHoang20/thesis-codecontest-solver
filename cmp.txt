@@ -1,0 +1,9 @@
+Let's summarize the problem. The problem asks to find the minimum possible equal price of all n goods so that if we sell them for this price, we will receive at least the same (or greater) amount of money as if we sell them for their initial prices. The sum of the initial prices of all goods is not less than the sum of the new prices. The number of goods is between 1 and 100. The price of each good is between 1 and 10^7. There are q independent queries.
+Let's make some observation. The minimum possible equal price of all n goods is the minimum of the initial prices. The sum of the initial prices of all goods is not less than the sum of the new prices. Therefore, the minimum possible equal price of all n goods is the minimum of the initial prices.
+So the plan is:
+Read the number of queries q.
+For each query:.
+	Read the number of goods n.
+	Read the initial prices of the goods.
+	Find the minimum of the initial prices.
+	Print the minimum price.

@@ -2,12 +2,6 @@ import pathlib
 import google.generativeai as genai
 import psycopg2
 
-from judge import judge
-from huggingface_hub import login
-
-from IPython.display import display
-from IPython.display import Markdown
-
 from constants import *
 
 def get_model():
@@ -166,7 +160,7 @@ def main():
                             response = model.generate_content(prompt + get_next_answer_prompt()) 
                             response_code = response.text.split('```cpp')[1]
                             response_code = response_code.split('```')[0]
-                            compiled, message = judge(code, public_tests)
+                            compiled, message = (False, '')
                             if not compiled and len(message) < 100:
                                 prompt += compile_error_prompt(response_code, message)
                                 print(message)

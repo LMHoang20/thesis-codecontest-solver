@@ -1,5 +1,7 @@
 import datasets
 import os
+import time
+
 from huggingface_hub import login
 from inference import get_db_conn
 from model import Gemini
@@ -63,7 +65,7 @@ def make_prompt(name, description, tags, editorial, code, multiple_code = False)
 - Observation must be wrapped in <OBSERVATION> and </OBSERVATION> tags.
 - Planning part is to list out step by steps, following the flow of the code, starting from the main function, to understand the code implementation.
 - Planning must be wrapped in <PLANNING> and </PLANNING> tags.
-- The length of the summary must be 10 to 20 bullet points for each of the observation and planning part.
+- The length of the summary must be long and detailed, 10 to 20 bullet points for each of the observation and planning part.
 {note}</TASK>
 """
 	return task + f"""<PROBLEM>
@@ -82,43 +84,37 @@ def make_prompt(name, description, tags, editorial, code, multiple_code = False)
 {start_tag}
 """
 
+
 if __name__ == '__main__':
 	model = Gemini()
 	dataset = get_dataset_from_hf()
 	create_table_summary()
-	with open('log-summary.txt', 'w') as log:
-		for problem in dataset:
-			contest = problem['contest']
-			index = problem['index']
-			name = problem['name']
-			description = problem['description']
-			tags = problem['tags']
-			editorial = problem['editorial']
-			sections = editorial.split('# TUTORIAL CODE XXX')
-			print(f"Start: {contest} {index}")
-			log.write(f"Start: {contest} {index}\n")
-			while '\n\n' in description:
-				description = description.replace('\n\n', '\n')
+	for problem in dataset:
+		contest = problem['contest']
+		index = problem['index']
+		name = problem['name']
+		description = problem['description']
+		tags = problem['tags']
+		editorial = problem['editorial']
+		sections = editorial.split('# TUTORIAL CODE XXX')
+		print(f"Start: {contest} {index}")
+		while '\n\n' in description:
+			description = description.replace('\n\n', '\n')
+		try:
+			assert len(sections) > 1, f"Problem {name} has no code"
+		except Exception as e:
+			continue
+		editorial = sections[0].strip().replace(' (REFERENCE)**', '**')
+		while '\n\n' in editorial:
+			editorial = editorial.replace('\n\n', '\n')
+		for i in range(1, len(sections)):
+			print(f"Processing: {contest} {index} {i}")
+			code = sections[i].strip()
+			prompt = make_prompt(name, description, tags, editorial, code, len(sections) > 2)
 			try:
-				assert len(sections) > 1, f"Problem {name} has no code"
+				response = model.generate_content(prompt)
+				summary = response.text
+				insert_summary(contest, index, summary)
 			except Exception as e:
-				log.write(f"Error: {contest} {index}: {e}\n")
 				continue
-			editorial = sections[0].strip().replace(' (REFERENCE)**', '**')
-			while '\n\n' in editorial:
-				editorial = editorial.replace('\n\n', '\n')
-			for i in range(1, len(sections)):
-				print(f"Processing: {contest} {index} {i}")
-				log.write(f"Processing: {contest} {index} {i}\n")
-				code = sections[i].strip()
-				prompt = make_prompt(name, description, tags, editorial, code, len(sections) > 2)
-				try:
-					response = model.generate_content(prompt)
-					summary = response.text
-					insert_summary(contest, index, summary)
-				except Exception as e:
-					log.write(f"Error: {contest} {index} {i}: {e}\n")
-					continue
-			print(f"Done: {contest} {index}")
-			log.write(f"Done: {contest} {index}\n")
-			log.flush()
+		print(f"Done: {contest} {index}")
