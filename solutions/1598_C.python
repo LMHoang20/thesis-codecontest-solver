@@ -1,0 +1,38 @@
+import sys
+
+def main():
+    # Read the number of test cases
+    t = int(sys.stdin.readline())
+
+    # Iterate over the test cases
+    for _ in range(t):
+        # Read the number of elements in the array
+        n = int(sys.stdin.readline())
+
+        # Read the array
+        a = list(map(int, sys.stdin.readline().split()))
+
+        # Compute the sum of all elements in the array
+        sum = 0
+        for x in a:
+            sum += x
+
+        # Compute the mean of the array
+        mean = sum / n
+
+        # Count the number of valid pairs
+        count = 0
+        for i in range(n):
+            for j in range(i + 1, n):
+                # Compute the sum of the remaining elements after deleting the pair
+                sum_remaining = sum - a[i] - a[j]
+
+                # Check if the mean of the remaining elements is equal to the mean of the original array
+                if (sum_remaining / (n - 2)) == mean:
+                    count += 1
+
+        # Print the count of valid pairs
+        print(count)
+
+if __name__ == "__main__":
+    main()

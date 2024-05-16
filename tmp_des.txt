@@ -1,0 +1,131 @@
+Summarize the following editorial in bullet points format.
+The summary MUST be long and detailed, about 10-15 bullet points for each solution.
+Must contain all the reasonings, logics, math-works, facts, observations, and explanations in the editorial.
+Must fix any vocabulary, grammar errors in the editorial.
+Must not contain any code.
+Must not have any unnecessary details. 
+Must be able to solve the problem with the summary alone.
+Must not have any formatting.
+Answer in markdown format like this:
+```md
+- sentence 1
+- sentence 2
+- sentence 3
+```             
+Here is the problem description:
+# Problem 1023_G. Pisces
+# Description:
+// start of problem description
+A group of researchers are studying fish population in a natural system of lakes and rivers. The system contains n lakes connected by n - 1 rivers. Each river has integer length (in kilometers) and can be traversed in both directions. It is possible to travel between any pair of lakes by traversing the rivers (that is, the network of lakes and rivers form a tree).
+
+There is an unknown number of indistinguishable fish living in the lakes. On day 1, fish can be at arbitrary lakes. Fish can travel between lakes by swimming the rivers. Each fish can swim a river l kilometers long in any direction in l days. Further, each fish can stay any number of days in any particular lake it visits. No fish ever appear or disappear from the lake system. Each lake can accomodate any number of fish at any time.
+
+The researchers made several observations. The j-th of these observations is "on day d_j there were at least f_j distinct fish in the lake p_j". Help the researchers in determining the smallest possible total number of fish living in the lake system that doesn't contradict the observations.
+
+Input
+
+The first line contains a single integer n (1 ≤ n ≤ 10^5) — the number of lakes in the system.
+
+The next n - 1 lines describe the rivers. The i-th of these lines contains three integers u_i, v_i, l_i (1 ≤ u_i, v_i ≤ n, u_i ≠ v_i, 1 ≤ l_i ≤ 10^3) — 1-based indices of lakes connected by the i-th river, and the length of this river.
+
+The next line contains a single integer k (1 ≤ k ≤ 10^5) — the number of observations.
+
+The next k lines describe the observations. The j-th of these lines contains three integers d_j, f_j, p_j (1 ≤ d_j ≤ 10^8, 1 ≤ f_j ≤ 10^4, 1 ≤ p_j ≤ n) — the day, the number of fish, and the lake index of the j-th observation. No two observations happen on the same day at the same lake simultaneously.
+
+Output
+
+Print one integer — the smallest total number of fish not contradicting the observations.
+
+Examples
+
+Input
+
+4
+1 2 1
+1 3 1
+1 4 1
+5
+1 1 2
+1 1 3
+2 2 1
+3 1 4
+3 1 2
+
+
+Output
+
+2
+
+
+Input
+
+5
+1 2 1
+1 3 1
+1 4 1
+1 5 1
+4
+1 1 2
+2 1 3
+3 1 4
+4 1 5
+
+
+Output
+
+2
+
+
+Input
+
+5
+2 5 1
+5 1 1
+2 4 1
+5 3 3
+6
+5 2 4
+2 1 1
+2 1 3
+2 2 4
+4 7 5
+4 1 2
+
+
+Output
+
+10
+
+Note
+
+In the first example, there could be one fish swimming through lakes 2, 1, and 4, and the second fish swimming through lakes 3, 1, and 2.
+
+In the second example a single fish can not possibly be part of all observations simultaneously, but two fish swimming 2 → 1 → 4 and 3 → 1 → 5 can.
+
+In the third example one fish can move from lake 1 to lake 5, others staying in their lakes during all time: two fish in lake 4, six fish in lake 5, one fish in lake 3. The system of lakes is shown on the picture.
+
+<image>
+// end of problem description
+Here is the editorial:
+# Editorial:
+// start of editorial
+First, how do we find the answer in any time complexity? Let us construct a partially ordered set where each element is a single fish in one of the observations. For two elements $x = (v_1, d_1)$ and $y = (v_2, d_2)$ we put $x < y$ if $x$ and $y$ could possibly be two occurences of the same fish one after the other, that is, there is enough time to get from one observation to another, so that $\rho(v_1, v_2) \leq d_2 - d_1$, where $\rho(v_1, v_2)$ is the distance between the tree vertices, and $d_1$ and $d_2$ are respective day numbers of the two observations. We can now see that the answer is the smallest number of `chains` needed to cover all the vertices (a chain is a set of pairwise comparable elements of a p.o.set). By Dilworth's theorem, this is equal to the size of the largest `antichain` (a set of pairwise incomparable elements). Clearly, if a largest antichain contains a fish from an observation, than it must include all fish from this observation as well. We can now solve the problem in something like $O(2^k)$ time by trying all subsets of observations.
+To get a better complexity we need to use the tree structure. To start, how do we check if a set of observations forms an antichain? Here's one criterion that works:
+Proposition. A set $S$ of observations is an antichain iff:
+-  For each subtree of the root $v$, a subset of $S$ lying in that subtree is an antichain.
+-  There exists a time moment $T$ such that it is impossible to reach $v$ at time $T$ from any observation in $S$ (possibly travelling back in time).
+Indeed, if both of these conditions hold, than for any two observations $(v_1, d_1)$ and $(v_2, d_2)$ happening in different subtrees we have $\rho(v_1, v_2) = \rho(v, v_1) + \rho(v, v_2) > |d_1 - T| + |d_2 - T| \geq |d_1 - d_2|$, hence these observations are incomparable. On the other hand, if $S$ is an antichain, for any observation $(v_i, d_i) \in S$ there is an interval of time moments $(l_i, r_i)$ such that we cannot reach the root at any of times in $(l_i, r_i)$. If two observations $i$ and $j$ are incomparable, then$(l_i, r_i) \cap (l_j, r_j) \neq \varnothing$. But since we have a set of intervals with pairwise non-empty intersections, they must all share a common point, hence our time moment $T$ exists.
+Note that in some cases $T$ is necessarily a non-integer: if there are two vertices at distance $1$ from the root, and there are observations happening at days $1$ and $2$ respectively at these vertices, than any $T \in (1, 2)$ will suffice. However, $T$ can always be either an integer or a half-integer, hence we can multiply all times and distances by $2$ and assume $T$ is integer.
+The solution is going to be subtree dynamic programming $dp_{v, t}$ — the total weight of the largest antichain in the subtree of $v$ such that no observation can reach $v$ at time $t$. Recalculation is a bit tricky, so let's go step by step. First, if we have values of $dp_{v, t}$, and no observations take place at $v$, how do we change $dp_{v, t}$ as we travel up the edge to the top of $v$? If the length of this edge is $l$, then the new values $dp'_{v, t}$ satisfy $dp'_{v, t} = \max_{t' = t - l}^{t + l} dp_{v, t'}$. Let's call this procedure "advancing $l$ steps forward".
+How do we account for observations at $v$? For an observation $(v, t)$ with $f$ fishes we cannot simply add $f$ to $dp_{v, t}$ since we can obviously reach $v$ at time $t$ from this observation. Instead, the correct procedure is:
+-  advance the values $1$ step;
+-  apply $dp'_{v, t} = \max(dp'_{v, t}, dp_{v, t} + f)$ for all observations;
+-  advance the new values $l - 1$ steps.
+Finally, to combine the answers from the subtrees $u_1, \ldots, u_k$ of a vertex $v$ (after the advancements were made in them), we simply add them element-wise for each $t$: $dp_{v, t} = \sum_{u_i} dp_{u_i, t}$.
+Of course, we cannot store the DP values themselves since there are too much of them to store. Instead, we will need to use a data structure that will maintain a piecewise constant function. More specifically, let us maintain the positions where the function changes values: for each $t$ such that $dp_{v, t} \neq dp_{v, t + 1}$ we store the pair $(t, dp_{v, t + 1} - dp_{v, t})$. How all of the above manipulations look like in terms of this difference structure?
+-  Element-wise sum of two functions is simply the union of the difference sets. (We may want to combine the differences with the same $t$ value, but for most implementations this is not necessary)
+-  When we advance $l$ steps forward, the borders with positive differences will more $l$ units to the left, and negative differences will move to the right. When two borders collide, then some of them get eliminated. Consider the function $10, 1, 5$, with two differences $(1, -9)$ and $(2, 4)$. After advancing this one step, the new function is $10, 10, 5$, so there is now a single difference $(2, -5)$. If we keep track of when and where these collisions take place, we can make changes to the structure accordingly.
+The structure of choice here is a treap of differences. When we add two functions, we insert all elements of the smaller treap into the larger one; a standard argument shows that at most $O(k \log k)$ insertions will take place overall. To keep track of collisions, we'll have to maintain collision times for all adjacent border pairs, and store the minimal value in the root of each subtree. This may seem cumbersome, but every adjacent pair of elements occurs either as (the rightmost vertex in the left subtree of $v$, $v$), or ($v$, the leftmost vertex in the right subtree of $v$), hence the standard `relax` function in the treap implementation can handle this.
+One further detail is that we don't want to change the time values in our treaps. Instead, we'll use "lazy" time shifting, that is, we'll keep an additional value $\Delta$ associated with each treap, and assume that for entries $(t, d)$ with $d > 0$ the actual time should be $t - \Delta$, and with $d < 0$ the time should be $t + \Delta$. This way, we won't need to actually change anything in the treap when advancing (apart from resolving collisions).
+The total complexity of this solution is $O(n + k \log^2 k)$.
+// end of editorial

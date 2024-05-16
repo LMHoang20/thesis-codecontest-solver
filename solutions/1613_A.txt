@@ -1,0 +1,21 @@
+**Editorial**
+
+The problem statement asks us to compare two numbers that follow a specific format: a positive integer x with p zeros appended to its end. To compare these two numbers, we can simply compare the values of x. If x1 is less than x2, then the first number is smaller than the second number. If x1 is greater than x2, then the first number is greater than the second number. If x1 is equal to x2, then the two numbers are equal.
+
+Here is an example to illustrate the comparison process:
+
+* **Input:** x1 = 2, p1 = 1, x2 = 19, p2 = 0
+* **Comparison:** x1 = 20, x2 = 19
+* **Output:** >
+
+In this example, the first number is greater than the second number because x1 is greater than x2.
+
+Here is another example:
+
+* **Input:** x1 = 10, p1 = 2, x2 = 100, p2 = 1
+* **Comparison:** x1 = 1000, x2 = 1000
+* **Output:** =
+
+In this example, the two numbers are equal because x1 is equal to x2.
+
+The problem statement also provides some sample inputs and outputs to help us understand the comparison process.

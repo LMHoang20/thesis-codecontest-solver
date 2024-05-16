@@ -1,0 +1,23 @@
+**Editorial**
+
+The problem asks us to find an athlete who is likely to get the gold medal in a marathon race. An athlete is considered likely to get the gold medal if he is superior to all other athletes. An athlete x is considered superior to athlete y if athlete x ranked better than athlete y in at least 3 past marathons.
+
+To solve this problem, we can use a simple greedy approach. We can iterate over the athletes and for each athlete, we can check if he is superior to all other athletes. If he is, then we can print his number and stop. Otherwise, we can continue to the next athlete.
+
+Here is the algorithm in more detail:
+
+1. Iterate over the athletes.
+2. For each athlete, check if he is superior to all other athletes.
+3. If he is, then print his number and stop.
+4. Otherwise, continue to the next athlete.
+
+The time complexity of this algorithm is O(n^2), where n is the number of athletes. This is because we need to check each athlete against all other athletes.
+
+Here is an example of how the algorithm would work on the first test case:
+
+1. Iterate over the athletes.
+2. There is only one athlete, so we check if he is superior to all other athletes.
+3. Since there are no other athletes, he is superior to all other athletes.
+4. Print his number and stop.
+
+The output for the first test case would be 1.

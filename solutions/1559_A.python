@@ -1,0 +1,35 @@
+import sys
+
+def main():
+    # Read the number of test cases
+    t = int(input())
+
+    # Loop through each test case
+    for _ in range(t):
+        # Read the length of the sequence
+        n = int(input())
+
+        # Read the sequence
+        a = list(map(int, input().split()))
+
+        # Initialize the minimum maximum value
+        min_max = sys.maxsize
+
+        # Loop through each element in the sequence
+        for i in range(n):
+            # Initialize the current maximum value
+            max_val = a[i]
+
+            # Loop through each element in the sequence after the current element
+            for j in range(i + 1, n):
+                # Perform a bitwise AND operation on the current maximum value and the current element
+                max_val &= a[j]
+
+            # Update the minimum maximum value
+            min_max = min(min_max, max_val)
+
+        # Print the minimum maximum value
+        print(min_max)
+
+if __name__ == "__main__":
+    main()

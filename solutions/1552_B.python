@@ -1,0 +1,31 @@
+def is_superior(athlete1, athlete2):
+    count = 0
+    for i in range(5):
+        if athlete1[i] < athlete2[i]:
+            count += 1
+    return count >= 3
+
+def main():
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        athletes = []
+        for _ in range(n):
+            athletes.append(list(map(int, input().split())))
+        found = False
+        for i in range(n):
+            count = 0
+            for j in range(n):
+                if i == j:
+                    continue
+                if is_superior(athletes[i], athletes[j]):
+                    count += 1
+            if count >= n - 1:
+                print(i + 1)
+                found = True
+                break
+        if not found:
+            print(-1)
+
+if __name__ == "__main__":
+    main()

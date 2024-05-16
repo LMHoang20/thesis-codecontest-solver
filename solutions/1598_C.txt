@@ -1,0 +1,19 @@
+**Editorial**
+
+The problem asks us to find the number of pairs of elements that can be deleted from an array such that the mean of the remaining elements remains the same.
+
+We can start by finding the mean of the array. Let's call it `k`. Then, for each pair of elements, we can check if deleting them would result in a mean of `k`.
+
+To check this, we can use the following formula:
+
+```
+(sum - a_i - a_j) / (n - 2) = k
+```
+
+where `sum` is the sum of all elements in the array, `a_i` and `a_j` are the elements being deleted, and `n` is the number of elements in the array.
+
+If the above equation holds, then deleting the elements `a_i` and `a_j` would result in a mean of `k`.
+
+We can use this formula to check all pairs of elements in the array and count the number of pairs that satisfy the equation.
+
+The time complexity of this algorithm is O(n^2), where `n` is the number of elements in the array.

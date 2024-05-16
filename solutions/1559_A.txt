@@ -1,0 +1,13 @@
+**Mocha's Mathematical Adventure: Minimizing Maximum Value**
+
+In the realm of mathematics, Mocha, a curious high school student, delves into the fascinating world of binary systems and bitwise operations. Her teacher has introduced her to the concept of bitwise AND, an operation that combines two binary numbers by taking the logical conjunction of their corresponding bits.
+
+Mocha is presented with a sequence of integers, and she is tasked with minimizing the maximum value in the sequence through a series of operations. In each operation, she can select an interval within the sequence and perform a bitwise AND operation on all pairs of elements within that interval.
+
+For instance, given the sequence [1, 2, 3, 4, 5], Mocha can choose the interval [2, 5]. The bitwise AND operation would then be applied to each pair of elements within this interval, resulting in the new sequence [1, 2 & 5, 3 & 4, 4 & 3, 5 & 2].
+
+Mocha's goal is to find the minimum possible maximum value in the sequence after performing any number of these operations. To achieve this, she must carefully consider the bitwise AND operation and its impact on the values within the sequence.
+
+By strategically selecting intervals and applying the bitwise AND operation, Mocha can manipulate the values in the sequence to minimize the maximum value. This requires a deep understanding of binary operations and the ability to anticipate the effects of these operations on the sequence.
+
+As Mocha embarks on this mathematical adventure, she discovers the power of bitwise operations and the importance of logical thinking in solving complex problems. Through her efforts, she not only minimizes the maximum value in the sequence but also gains valuable insights into the fascinating world of computer science.

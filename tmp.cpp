@@ -1,61 +1,86 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <algorithm>
+
 using namespace std;
-typedef long long ll;
-typedef unsigned long long ull;
-typedef pair<int, int> pii;
-typedef pair<ll, ll> pll;
-template <typename T> bool chkmax(T &x, T y) { return x < y ? x = y, true : false; }
-template <typename T> bool chkmin(T &x, T y) { return x > y ? x = y, true : false; }
-int readint() {
-  int x = 0, f = 1;
-  char ch = getchar();
-  while (ch < '0' || ch > '9') {
-    if (ch == '-') {
-      f = -1;
+
+typedef pair<int, int> pii;  // (day, lake) for observations
+
+// Calculate distances from a reference lake (lake 1)
+void calculateDistances(vector<vector<pii>>& adjList, vector<int>& dist) {
+    queue<int> q;
+    q.push(1); // Reference lake
+    dist[1] = 0;
+
+    while (!q.empty()) {
+        int currLake = q.front(); q.pop();
+        for (pii neighbor : adjList[currLake]) {
+            int nextLake = neighbor.first;
+            int edgeLen = neighbor.second;
+            if (dist[nextLake] == -1) { // Unvisited
+                dist[nextLake] = dist[currLake] + edgeLen;
+                q.push(nextLake);
+            }
+        }
     }
-    ch = getchar();
-  }
-  while (ch >= '0' && ch <= '9') {
-    x = x * 10 + ch - '0';
-    ch = getchar();
-  }
-  return x * f;
 }
-const int cys = 998244353;
-int n;
-ll fac[5005], inv[5005], d[5005][5005], ans[5005];
-ll qpow(ll x, ll p) {
-  ll ret = 1;
-  for (; p; p >>= 1, x = x * x % cys) {
-    if (p & 1) {
-      ret = ret * x % cys;
-    }
-  }
-  return ret;
-}
+
 int main() {
-  n = readint();
-  d[0][0] = fac[0] = inv[0] = 1;
-  for (int i = 1; i <= n; i++) {
-    fac[i] = fac[i - 1] * i % cys;
-  }
-  inv[n] = qpow(fac[n], cys - 2);
-  for (int i = n - 1; i >= 1; i--) {
-    inv[i] = inv[i + 1] * (i + 1) % cys;
-  }
-  for (int i = 1; i <= n; i++) {
-    for (int j = 1; j <= i; j++) {
-      d[i][j] = (d[i - 1][j - 1] * (i - j + 1) + d[i - 1][j] * j) % cys;
+    int n, k;
+    cin >> n; // Number of lakes
+
+    // Adjacency list for graph representation
+    vector<vector<pii>> adjList(n + 1); 
+    for (int i = 0; i < n - 1; ++i) {
+        int u, v, l;
+        cin >> u >> v >> l;
+        adjList[u].push_back({v, l});
+        adjList[v].push_back({u, l});
     }
-  }
-  for (int i = 1; i <= n; i++) {
-    for (int j = 1; j <= n; j++) {
-      ans[i] = (ans[i] + d[j][i] * inv[j]) % cys;
+
+    vector<int> dist(n + 1, -1); // Distances from lake 1
+    calculateDistances(adjList, dist);
+
+    cin >> k; // Number of observations
+    vector<vector<pii>> observations(n + 1);
+    for (int i = 0; i < k; ++i) {
+        int d, f, p;
+        cin >> d >> f >> p;
+        observations[p].push_back({d, f});
     }
-  }
-  for (int i = 1; i <= n; i++) {
-    printf("%lld ", ans[i] * fac[n] % cys);
-  }
-  printf("\n");
-  return 0;
+
+    int totalFish = 0;
+
+    // Process observations for each lake
+    for (int lake = 1; lake <= n; ++lake) {
+        sort(observations[lake].begin(), observations[lake].end());
+
+        priority_queue<pii, vector<pii>, greater<pii>> activeWindows; // Min-heap
+        for (pii obs : observations[lake]) {
+            int day = obs.first;
+            int fish = obs.second;
+
+            // Remove expired windows
+            while (!activeWindows.empty() && activeWindows.top().first < day - dist[lake]) {
+                activeWindows.pop();
+            }
+
+            // Overlap: extend existing window
+            if (!activeWindows.empty()) {
+              int top = activeWindows.top().second;
+              top += fish; 
+              activeWindows.pop();
+              activeWindows.push({day, top});
+            } 
+            // No overlap: add new window
+            else {
+                activeWindows.push(obs);
+            }
+        }
+        totalFish += activeWindows.size(); // Fish needed for this lake
+    }
+
+    cout << totalFish << endl;
+    return 0;
 }

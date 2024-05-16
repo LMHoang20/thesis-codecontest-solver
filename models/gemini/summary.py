@@ -7,33 +7,27 @@ from inference import get_db_conn
 from model import Gemini
 from constants import *
 
-def get_dataset_from_hf():
-	login(HF_READ_TOKEN)
-	dataset = datasets.load_dataset(EDITORIAL_DATASET, split='train', cache_dir='cache-editorial') 
-	dataset = dataset.filter(lambda x: x['has_code'])
-	return dataset
-
-def create_table_summary():
+def create_table_small_summary():
 	conn = get_db_conn()
 	cursor = conn.cursor()
 	cursor.execute('''
-	CREATE TABLE IF NOT EXISTS summaries (
+	CREATE TABLE IF NOT EXISTS small_summaries (
 		id SERIAL PRIMARY KEY,
-		contest_id VARCHAR(10) NOT NULL,
-		problem_id VARCHAR(10) NOT NULL,
-		summary TEXT NOT NULL
+		name TEXT NOT NULL,
+		content TEXT NOT NULL
 	)
 	''')
 	conn.commit()
 	cursor.close()
 
-def insert_summary(contest, problem_id, summary):
+def insert_small_summary(name, content):
 	conn = get_db_conn()
 	cursor = conn.cursor()
-	cursor.execute('''
-		INSERT INTO summaries (contest_id, problem_id, summary)
-		VALUES (%s, %s, %s)
-	''', (contest, problem_id, summary))
+	cursor.execute(
+	"""
+	INSERT INTO small_summaries (name, content)
+	VALUES (%s, %s)
+	""", (name, content))
 	conn.commit()
 	cursor.close()
 

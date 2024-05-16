@@ -1,0 +1,36 @@
+Solution solve flow:
+
+Step 1: Brainstorming -> fine-tuned model
+- Generate N editorials from scratch: +N calls (technically 1 call).
+
+Step 2: Filtering -> gemini
++1 call.
+For each generated editorial:
+- Extract out the first verifiable observation.
+- A verifiable observation is an observation that can be verified by doing the calculations by hand and/or generate and execute a program that assert a statement truthfulness.
++1 call.
+For all the extracted observations:
+- Verify if the extracted observations is correct using the test cases given in the description.
+- Do the calculations by hand, each step is verified by a calculator or a computer.
+- If at any step the verifier generated a wrong calculation, the editorial is deemed incorrect (it’s more likely that the small model generated gibberish than the big model failed, maybe give 1 retry, but that’s +1 call).
+- If all the calculations are correct, the editorial’s correctness is determined by the verifier’s conclusion.
+If none of the editorials survive the filter, back to Step 1.
+The editorials that passed this filter will move on to Step 3.
+
+Step 3: Coding -> gemini
++1 call.
+Implement the solution:
+- Create a plan of implementation.
+- Write the solution in Python.
+Judge the program on Public tests:
+- If failed, debug by breakpointing the program on the Public tests: +2x calls (for each debug attempt: add print + reflect and reimplement)
+- If passed, judge the program on Private tests:
+    - If failed, debug using `kactl` common mistakes: +y calls
+        - If still failed, the reasoning is wrong, move on to Step 4.
+    - If passed, congratulations, report the amount of LLM calls needed.
+
+Step 4: Reflecting -> gemini
+The implementation follows the editorial correctly and still wrong, so the editorial must be wrong
+- Find the first line where the editorial is wrong: +1 call
+- Generating M solutions starting from that line: +M calls (technically 1 call)
+- Go back to Step 2.

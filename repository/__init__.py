@@ -1,4 +1,5 @@
-
+from database import get_db_conn
+from entity.problem import Problem
 
 class Repository:
     def __init__(self) -> None:
@@ -17,16 +18,26 @@ class HuggingFace(Repository):
     def get(self):
         pass
 
-class Problems(Repository):
-    def __init__(self, connection, table) -> None:
+class Problem(Repository):
+    # constructor
+    def __init__(self, connection) -> None:
         self.connection = connection
-        self.table = table
-    def insert(self, rows):
-        pass
-    def get(self):
-        pass
+    # destructor
+    def __del__(self):
+        self.connection.close()
+    def get_test_problems(self, split = None):
+        cursor = self.connection.cursor()
+        cursor.execute(f"""
+            SELECT name, description, cf_rating, cf_tags, public_tests, private_tests, generated_tests, cf_contest_id, cf_index
+            FROM testing_problems
+            {'WHERE split = %s' if split else ''}
+            ORDER BY cf_rating, name
+        """, (split,))
+        problems = cursor.fetchall()
+        cursor.close()
+        return problems
 
-class SolveAttempts(Repository):
+class SolveAttempt(Repository):
     def __init__(self, connection, table) -> None:
         self.connection = connection
         self.table = table

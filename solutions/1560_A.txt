@@ -1,0 +1,20 @@
+**Polycarp's Dislike of Threes**
+
+Polycarp is a peculiar individual with a strong aversion to the number three. He despises integers divisible by three or ending in the digit three. Even numbers that satisfy both conditions evoke his disdain.
+
+To express his distaste, Polycarp has embarked on a mission to write out a sequence of positive integers that adhere to his preferences. The sequence begins with 1, 2, 4, 5, 7, 8, 10, 11, 14, 16, and so on.
+
+Your task is to determine the k-th element of this sequence for a given input k. Each test case consists of a single integer k, and you must output the corresponding element from Polycarp's sequence.
+
+**Example:**
+
+For k = 1, the output is 1.
+For k = 2, the output is 2.
+For k = 3, the output is 4.
+For k = 4, the output is 5.
+For k = 5, the output is 7.
+For k = 6, the output is 8.
+For k = 7, the output is 10.
+For k = 8, the output is 11.
+For k = 9, the output is 14.
+For k = 1000, the output is 1666.

@@ -1,6 +1,7 @@
 import helpers
 import datasets
 
+from psycopg2.extras import Json
 from huggingface_hub import login
 from database import get_db_conn
 from entity.problem import Problem
@@ -25,24 +26,25 @@ def transform_columns(dataset):
         dataset_dict['editorial'].append('')
     return datasets.Dataset.from_dict(dataset_dict)
 
-def create_table_problem_validation():
+def create_table_testing_problems():
     conn = get_db_conn()
     cursor = conn.cursor()
     cursor.execute(
         """
-        CREATE TABLE IF NOT EXISTS problems_v2 (
-            name VARCHAR(255) PRIMARY KEY,
+        DROP TABLE IF EXISTS testing_problems;
+        CREATE TABLE IF NOT EXISTS testing_problems (
+            id SERIAL PRIMARY KEY,
+            name TEXT NOT NULL,
             description TEXT NOT NULL,
-            source INT,
-            difficulty INT,
-            cf_contest_id INT,
-            cf_index VARCHAR(255),
-            cf_rating INT,
-            cf_tags []TEXT,
-            time_limit JSONB,
-            memory_limit_bytes JSONB,
-            split TEXT
-        );
+            public_tests JSONB NOT NULL,
+            private_tests JSONB NOT NULL,
+            generated_tests JSONB NOT NULL,
+            cf_contest_id INT NOT NULL,
+            cf_index TEXT NOT NULL,
+            cf_rating INT NOT NULL,
+            cf_tags TEXT NOT NULL,
+            split TEXT NOT NULL
+        )
         """
     )
     conn.commit()
@@ -55,10 +57,9 @@ def insert_to_db(sample, split):
     cursor = conn.cursor()
     cursor.execute(
         """
-        INSERT INTO testing_problems (name, description, cf_rating, cf_tags, split)
-        VALUES (%s, %s, %s, %s, %s)
-        """,
-        (sample['name'], sample['description'], sample['rating'], sample['tags'], split)
+        INSERT INTO testing_problems (name, description, public_tests, private_tests, generated_tests, cf_contest_id, cf_index, cf_rating, cf_tags, split)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """, (sample['name'], sample['description'], Json(sample['public_tests']), Json(sample['private_tests']), Json(sample['generated_tests']), sample['cf_contest_id'], sample['cf_index'], str(sample['cf_rating']), ', '.join(sample['cf_tags']), split)
     )
     conn.commit()
     cursor.close()
@@ -68,16 +69,16 @@ if __name__ == '__main__':
     login(HF_WRITE_TOKEN)
     dataset_id = 'deepmind/code_contests'
     validate_set = datasets.load_dataset(dataset_id, split='valid', trust_remote_code=True, cache_dir='cache-validate')
-    validate_set = transform_columns(validate_set)
-    validate_set.push_to_hub('HoangLe1312/codecontest-reasoning', split='validate')
+    # validate_set = transform_columns(validate_set)
+    # validate_set.push_to_hub('HoangLe1312/codecontest-reasoning', split='validate')
     test_set = datasets.load_dataset(dataset_id, split='test', trust_remote_code=True, cache_dir='cache-validate')
-    test_set = transform_columns(test_set)
-    test_set.push_to_hub('HoangLe1312/codecontest-reasoning', split='test')
-    create_table_problem_validation()
-    test_set = datasets.load_dataset('HoangLe1312/codecontest-reasoning', split='test', trust_remote_code=True)
+    # test_set = transform_columns(test_set)
+    # test_set.push_to_hub('HoangLe1312/codecontest-reasoning', split='test')
+    create_table_testing_problems()
+    # test_set = datasets.load_dataset('HoangLe1312/codecontest-reasoning', split='test', trust_remote_code=True)
     for sample in test_set:
         insert_to_db(sample, 'test')
-    validate_set = datasets.load_dataset('HoangLe1312/codecontest-reasoning', split='validate', trust_remote_code=True)
+    # validate_set = datasets.load_dataset('HoangLe1312/codecontest-reasoning', split='validate', trust_remote_code=True)
     for sample in validate_set:
         insert_to_db(sample, 'validate')
 

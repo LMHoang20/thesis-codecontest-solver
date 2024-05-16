@@ -16,6 +16,21 @@ class Problem:
         self.code = code
     def __str__(self) -> str:
         return f"Problem(name={self.name}, description={self.description}, rating={self.rating}, tags={self.tags}, source={self.source}, public_tests={self.public_tests}, private_tests={self.private_tests}, generated_tests={self.generated_tests}, contest_id={self.contest_id}, problem_id={self.problem_id}, editorial={self.editorial}, code={self.code})"
+    def to_dict(self) -> dict:
+        return {
+            "name": self.name,
+            "description": self.description,
+            "rating": self.rating,
+            "tags": self.tags,
+            "source": self.source,
+            "public_tests": self.public_tests,
+            "private_tests": self.private_tests,
+            "generated_tests": self.generated_tests,
+            "contest_id": self.contest_id,
+            "problem_id": self.problem_id,
+            "editorial": self.editorial,
+            "code": self.code
+        }
     def get_tests(self, public=True, private=True, generated=True) -> List[str]:
         tests = []
         if public:

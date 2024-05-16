@@ -1,0 +1,9 @@
+for _ in range(int(input())):
+    k = int(input())
+    count = 0
+    num = 1
+    while count < k:
+        if num % 3 != 0 and num % 10 != 3:
+            count += 1
+        num += 1
+    print(num - 1)

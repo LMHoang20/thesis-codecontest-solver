@@ -1,22 +1,17 @@
-import os 
+def is_fair_playoff(t):
+    for _ in range(t):
+        # Read the skill levels of the four players
+        s = list(map(int, input().split()))
+        # Sort the skill levels
+        s.sort(reverse=True)
+        # The top two players in the finals
+        finalists = s[:2]
+        # Check if the top two players are the highest in the initial set
+        if finalists == s[:2]:
+            print("YES")
+        else:
+            print("NO")
 
-for root, dirs, files in os.walk('data/contests'):
-    for file in files:
-        if file != 'editorial.md' and '-' not in file and file.endswith('.md'):
-            dir = os.path.join(root, file)
-            print(dir)
-            with open(dir, 'r') as f:
-                first_line = f.readlines()[0]
-            with open('test.txt', 'a') as f:
-                f.write(f"{dir}:\n{first_line}\n\n")
-
-for root, dirs, files in os.walk('data/contests-v2'):
-    for file in files:
-        if file != 'editorial.md' and '-' not in file and file.endswith('.md'):
-            dir = os.path.join(root, file)
-            print(dir)
-            with open(dir, 'r') as f:
-                first_line = f.readlines()[0]
-            with open('test.txt', 'a') as f:
-                f.write(f"{dir}:\n{first_line}\n\n")
-                
+# Read the number of test cases
+t = int(input())
+is_fair_playoff(t)

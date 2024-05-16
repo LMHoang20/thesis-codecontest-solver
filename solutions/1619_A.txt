@@ -1,0 +1,43 @@
+**Editorial**
+
+A square string is a string that is formed by concatenating a string with itself. For example, the string "abcabc" is square because it is formed by concatenating the string "abc" with itself.
+
+To determine if a string is square, we can check if the first half of the string is equal to the second half of the string. If they are equal, then the string is square. Otherwise, the string is not square.
+
+Here is an example of how to check if a string is square:
+
+```
+def is_square(s):
+  """
+  Checks if a string is square.
+
+  Args:
+    s: The string to check.
+
+  Returns:
+    True if the string is square, False otherwise.
+  """
+
+  # Check if the string is empty.
+  if not s:
+    return False
+
+  # Check if the first half of the string is equal to the second half of the string.
+  return s[:len(s) // 2] == s[len(s) // 2:]
+```
+
+We can use the `is_square` function to solve the problem. For each test case, we can read the string and check if it is square. If it is square, we print "YES". Otherwise, we print "NO".
+
+Here is the code for the solution:
+
+```
+t = int(input())
+
+for _ in range(t):
+  s = input()
+
+  if is_square(s):
+    print("YES")
+  else:
+    print("NO")
+```
