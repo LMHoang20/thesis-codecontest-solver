@@ -15,6 +15,7 @@ def transform_columns(dataset):
         'rating': [],
         'source': [],
         'editorial': [],
+        'solutions': []
     }
     for sample in dataset:
         assert sample['source'] == 2
@@ -24,6 +25,7 @@ def transform_columns(dataset):
         dataset_dict['rating'].append(str(sample['cf_rating']))
         dataset_dict['source'].append('codeforces')
         dataset_dict['editorial'].append('')
+        dataset_dict['solutions'].append(sample['solutions'])
     return datasets.Dataset.from_dict(dataset_dict)
 
 def create_table_testing_problems():
@@ -39,6 +41,7 @@ def create_table_testing_problems():
             public_tests JSONB NOT NULL,
             private_tests JSONB NOT NULL,
             generated_tests JSONB NOT NULL,
+            solutions JSONB,
             cf_contest_id INT NOT NULL,
             cf_index TEXT NOT NULL,
             cf_rating INT NOT NULL,
@@ -57,9 +60,9 @@ def insert_to_db(sample, split):
     cursor = conn.cursor()
     cursor.execute(
         """
-        INSERT INTO testing_problems (name, description, public_tests, private_tests, generated_tests, cf_contest_id, cf_index, cf_rating, cf_tags, split)
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        """, (sample['name'], sample['description'], Json(sample['public_tests']), Json(sample['private_tests']), Json(sample['generated_tests']), sample['cf_contest_id'], sample['cf_index'], str(sample['cf_rating']), ', '.join(sample['cf_tags']), split)
+        INSERT INTO testing_problems (name, description, public_tests, private_tests, generated_tests, cf_contest_id, cf_index, cf_rating, cf_tags, split, solutions)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """, (sample['name'], sample['description'], Json(sample['public_tests']), Json(sample['private_tests']), Json(sample['generated_tests']), sample['cf_contest_id'], sample['cf_index'], str(sample['cf_rating']), ', '.join(sample['cf_tags']), split, Json(sample['solutions']))
     )
     conn.commit()
     cursor.close()

@@ -12,27 +12,30 @@ from models import LLM
 from logger import Logger, get_logger
 from debugger import Debugger
 
-class BetaCode:
-    def __init__(self, name: str, editorialist: Editorialist, coder: Coder, judge: Judge, debugger: Debugger, logger: Logger = Logger()):
+class Contestant:
+    def __init__(self, name: str, editorialist: Editorialist, coder: Coder, judge: Judge, debugger: Debugger, max_total_llm_calls: int, logger: Logger = Logger()):
         self.name = name
         self.editorialist = editorialist
         self.coder = coder
         self.judge = judge
         self.debugger = debugger
-        self.logger = logger
         self.total_llm_calls = 0
-        self.max_total_llm_calls = 20
+        self.max_total_llm_calls = max_total_llm_calls
+        self.logger = logger
     def call_llm(self, llm: LLM, *args, **kwargs):
         if self.total_llm_calls >= self.max_total_llm_calls:
             raise Exception("maximum total llm calls reached")
         self.total_llm_calls += 1
         return llm.generate(*args, **kwargs)
-
     def solve(self, problem: Problem):
         try:
-            self.logger.info("generating editorial for problem:", problem.name)
-            problem.editorial = self.call_llm(self.editorialist, problem=problem)
+            self.logger.info("generating editorial(s) for problem:", problem.name)
+            editorials = self.call_llm(self.editorialist, problem=problem)
             self.logger.info("generating code for problem:", problem.name)
+            if len(editorials) > 1:
+                editorial = self.call_llm(self.filterer)
+            else:
+                editorial = editorials[0]
             result = self.call_llm(self.coder, problem=problem)
             code, language = result
             tests = problem.get_tests(public=True, private=False, generated=False)
@@ -69,7 +72,7 @@ def main():
         coder = Coder(session_id, model, coder_logger)
         judge = Judge(session_id, judge_logger)
         debugger = Debugger(session_id, model, debugger_logger)
-        betaCode = BetaCode(session_id, editorialist, coder, judge, debugger, system_logger)
+        betaCode = Contestant(session_id, editorialist, coder, judge, debugger, system_logger)
         
         code, language, result = betaCode.solve(problem)
         if result[0] == 'OK':

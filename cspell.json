@@ -1,0 +1,23 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "antiedge",
+        "bruteforcingly",
+        "deque",
+        "genai",
+        "generativeai",
+        "Karp",
+        "Möbius",
+        "multiset",
+        "precompute",
+        "subarray",
+        "sweepline",
+        "testcase",
+        "whitespaces"
+    ],
+    "ignoreWords": [],
+    "import": []
+}

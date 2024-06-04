@@ -130,7 +130,7 @@ class Judge:
     def __init__(self, name: str, logger: Logger) -> None:
         self.name = name
         self.logger = logger
-    def judge_tests(self, problem_name: str, code: str, language: str, tests: List[Tuple[str, str]], checker: Checker=None):
+    def judge_tests(self, problem_name: str, code: str, language: str, tests: List[Tuple[str, str]], checker: Checker=Checker()):
         if language == 'cpp':
             sandbox = CppSandbox(self.name)
         else:

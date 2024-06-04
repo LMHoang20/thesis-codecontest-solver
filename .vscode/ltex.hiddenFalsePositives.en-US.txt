@@ -1,0 +1,15 @@
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QBut if loser retreats, winner just restores initial position attacking in the corresponding rows.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QLet's call formed string a root.\\E$"}
+{"rule":"DID_FOUND_AMBIGUOUS","sentence":"^\\QSimilarly, the horizontal line \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q will span through every alarm clock standing at positions with y-coordinate being equal to \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"DID_FOUND_AMBIGUOUS","sentence":"^\\QWe can see that the vertical line \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q will span through every alarm clock standing at positions with x-coordinate being equal to \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"THE_SENT_END","sentence":"^\\QGiven range a, b, it can transform only in a', b with a' ≥ a.\\E$"}
+{"rule":"WIFI","sentence":"^\\QThe center of the wifi circle \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q will be the midpoint of the line segment connecting \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"WHOSE_DT","sentence":"^\\QCases when a child has no turns left (it is a leaf node), or when it has only one turn left (it is a node whose both children are leaves) are both corner cases and need to be handled separately.\\E$"}
+{"rule":"ARTICLE_ADJECTIVE_OF","sentence":"^\\QThere can be two cases:\nIf the symmetric of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q does not belong to \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, we add it to \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"ARTICLE_ADJECTIVE_OF","sentence":"^\\QThe symmetric of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q belongs to \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"DT_JJ_NO_NOUN","sentence":"^\\QIf increasing height of cave A affects \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q of cave \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q below then later changing height of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q does nothing, because B is blocked by A anyway.\\E$"}
+{"rule":"EN_COMPOUNDS","sentence":"^\\QIt is easy to see that our construction will give a zero sum.\\E$"}
+{"rule":"PRP_MD_NN","sentence":"^\\QThus, for a fixed \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, the overall mean is bitonic in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q (it increases then decreases), so we can binary search on the marginal utility to find the optimum.\\E$"}
+{"rule":"DID_FOUND_AMBIGUOUS","sentence":"^\\QThen we can bound the values for \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q between \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"FILL_OF_WITH","sentence":"^\\QThe logical thing to do is to fill the rest of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q with the numbers not in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q in increasing order.\\E$"}
+{"rule":"FILL_OF_WITH","sentence":"^\\QWe can use this observation to fill some indices of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

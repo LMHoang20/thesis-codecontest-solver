@@ -4,8 +4,10 @@ import threading
 
 from constants import *
 
+GEMINI_RATE_LIMIT = 15 # per minute
+TIME_TO_WAIT = 60 / GEMINI_RATE_LIMIT + 1
 class Gemini:
-    def __init__(self, temperature=0.4, top_k=35, top_p=0.9):
+    def __init__(self, temperature=1, top_k=1, top_p=0.8):
         safety_settings = [
             {
                 "category": "HARM_CATEGORY_DANGEROUS",
@@ -33,16 +35,19 @@ class Gemini:
             "top_k": top_k,
             "top_p": top_p,
         }
+        print(GOOGLE_API_KEY)
         genai.configure(api_key=GOOGLE_API_KEY)
-        self.model = genai.GenerativeModel('gemini-pro', safety_settings=safety_settings, generation_config=generation_config)
-        self.time_since_last_call = time.time()
+        # for model in genai.list_models():
+            # print(model)
+        self.model = genai.GenerativeModel('gemini-1.5-flash', safety_settings=safety_settings, generation_config=generation_config)
+        self.time_since_last_call = -1
         self.lock = threading.Lock()
     def generate(self, prompt):
         with self.lock:
             duration = time.time() - self.time_since_last_call
-            # if duration < 1 seconds, sleep for the remaining time
-            if duration < 1:
-                time.sleep(1 - duration)
+            if duration < TIME_TO_WAIT:
+                print("waiting for", TIME_TO_WAIT - duration, "seconds")
+                time.sleep(TIME_TO_WAIT - duration)
             self.time_since_last_call = time.time()
         response = self.model.generate_content(prompt)
         try:

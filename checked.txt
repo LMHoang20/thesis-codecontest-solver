@@ -1,0 +1,1859 @@
+1315_D. Recommendations
+1363_C. Game On Leaves
+1550_F. Jumping Around
+1536_B. Prinzessin der Verurteilung
+1550_D. Excellent Arrays
+1438_B. Valerii Against Everyone
+1550_E. Stringforces
+1536_A. Omkar and Bad Story
+400_B. Inna and New Matrix of Candies
+1374_B. Multiply by 2, divide by 6
+1481_B. New Colony
+400_E. Inna and Binary Logic
+1438_D. Powerful Ksenia
+1475_D. Cleaning the Phone
+70_B. Text Messaging
+123_E. Maze
+1374_E1. Reading Books (easy version)
+1438_E. Yurii Can Do Everything
+70_C. Lucky Tickets
+6_B. President's Office
+1315_C. Restoring Permutation
+70_E. Information Reform
+6_C. Alice, Bob and Chocolate
+6_A. Triangle
+384_D. Volcanoes
+477_B. Dreamoon and Sets
+1234_F. Yet Another Substring Reverse
+60_B. Serial Time!
+1234_B2. Social Network (hard version)
+1157_B. Long Number
+60_A. Where Are My Flakes?
+1234_D. Distinct Characters Queries
+1228_E. Another Filling the Grid
+1234_A. Equalize Prices Again
+1157_G. Inverse of Rows and Columns
+1242_C. Sum Balance
+1157_A. Reachable Numbers
+1205_A. Almost Equal
+1242_D. Number Discovery
+1266_F. Almost Same Distance
+1183_D. Candy Box (easy version)
+1242_A. Tile Painting
+1266_C. Diverse Matrix
+1183_E. Subsequences (easy version)
+1242_E. Planar Perimeter
+1266_D. Decreasing Debts
+1547_G. How Many Paths?
+1263_B. PIN Codes
+1266_E. Spaceship Solitaire
+1547_E. Air Conditioners
+1263_C. Everyone is a Winner!
+1204_B. Mislove Has Lost an Array
+1290_F. Making Shapes
+1263_D. Secret Passwords
+1204_C. Anna, Svyatoslav and Maps
+1290_C. Prefix Enlightenment
+1330_A. Dreamoon and Ranking Collection
+1204_E. Natasha, Sasha and the Prefix Sums
+1156_B. Ugly Pairs
+1299_B. Aerodynamic
+1214_G. Feeling Good
+1299_C. Water Balance
+1214_C. Bad Sequence
+1156_G. Optimizer
+1220_D. Alex and Julian
+1214_H. Tiles Placement
+1220_A. Cards
+1214_D. Treasure Island
+1156_C. Match Points
+66_B. Petya and Countryside
+1162_F. Palindrome XOR
+1156_A. Inscribed Figures
+1162_C. Hide and Seek
+1517_F. Reunion
+1162_D. Chladni Figure
+1475_A. Odd Divisor
+1198_D. Rectangle Painting 1
+1162_A. Zoning Restrictions Again
+1517_C. Fillomino 2
+1535_F. String Distance
+1162_E. Thanos Nim
+1517_D. Explorer Space
+1165_B. Polycarp Training
+1186_A. Vus the Cossack and a Contest
+1517_A. Sum of 2050
+1165_D. Almost All Divisors
+1179_C. Serge and Dining Room
+57_B. Martian Architecture
+57_C. Array
+1494_B. Berland Crossword
+1179_D. Fedor Runs for President
+57_D. Journey
+1494_F. Delete The Edges
+1179_A. Valeriy and Deque
+57_A. Square Earth?
+1494_D. Dogeforces
+57_E. Chess
+1494_A. ABC String
+1490_F. Equalize the Array
+154_B. Colliders
+1213_G. Path Queries
+1490_C. Sum of Cubes
+154_D. Flatland Fencing
+1213_D2. Equalizing by Division (hard version)
+1327_F. AND Segments
+1237_F. Balanced Domino Placements
+1213_A. Chips Moving
+1327_C. Game with Chips
+1237_D. Balanced Playlist
+1327_A. Sum of Odd Integers
+1430_G. Yet Another DAG Problem
+1430_C. Numbers on Whiteboard
+1354_B. Ternary String
+1327_E. Count The Blocks
+1430_E. String Reversal
+1354_F. Summoning Minions
+1311_C. Perform the Combo
+1194_F. Crossword Expert
+1194_C. From S To T
+1354_G. Find a Gift
+1194_D. 1-2-K Game
+1364_E. X-OR
+1516_B. AGAGA XOOORRR
+1355_F. Guess Divisors Count
+1516_C. Baby Ehab Partitions Again
+1365_F. Swaps Again
+1365_G. Secure Password
+1355_A. Sequence with Digits
+1365_C. Rotation Matching
+1355_E. Restorer Distance
+1391_D. 505
+24_C. Sequence of points
+24_E. Berland collider
+1391_E. Pairs of Pairs
+26_B. Regular Bracket Sequence
+1260_B. Obtain Two Zeroes
+1506_G. Maximize the Remaining String
+26_C. Parquet
+1260_D. A Game with Traps
+26_D. Tickets
+1506_D. Epic Transformation
+1260_E. Tournament
+26_A. Almost Prime
+1520_G. To Go Or Not To Go?
+1268_D. Invertation in Tournament
+1523_B. Lord of the Values
+1520_C. Not Adjacent Matrix
+1523_F. Favorite Game
+1527_A. And Then There Were K
+1520_A. Do Not Be Distracted!
+1375_G. Tree Modification
+1527_E. Partition Game
+391_B. Word Folding
+1375_H. Set Merging
+1523_D. Love-Hate
+391_D2. Supercollider
+1375_I. Cubic Lattice
+1523_E. Crypto Lights
+1333_C. Eugene and an array
+1375_E. Inversion SwapSort
+1174_B. Ehab Is an Odd Person
+1165_A. Remainder
+1333_E. Road to 1600
+61_C. Capture Valerian
+65_B. Harry Potter and the History of Magic
+61_D. Eternal Victory
+1174_D. Ehab and the Expected XOR Problem
+65_C. Harry Potter and the Golden Snitch
+1174_A. Ehab Fails to Be Thanos
+61_A. Ultra-Fast Mathematician
+1256_B. Minimize the Permutation
+61_E. Enemy is weak
+1256_A. Payment Without Change
+1337_B. Kana and Dragon Quest game
+1174_E. Ehab and the Expected GCD Problem
+1256_E. Yet Another Division Into Teams
+911_F. Tree Destruction
+1337_F. Yui and Mahjong Set
+1190_B. Tokitsukaze, CSL and Stone Game
+1337_E. Kaavi and Magic Spell
+1420_B. Rock and Lever
+1190_F. Tokitsukaze and Powers
+1272_B. Snow Walking Robot
+1190_C. Tokitsukaze and Duel
+1420_C2. Pokémon Army (hard version)
+1272_C. Yet Another Broken Keyboard
+746_F. Music in Car
+1272_D. Remove One Element
+1190_D. Tokitsukaze and Strange Rectangle
+1272_E. Nearest Opposite Parity
+1167_B. Lost Numbers
+1469_C. Building a Fence
+1469_D. Ceil Divisions
+1167_D. Bicolored RBS
+1404_E. Bricks
+1167_E. Range Deleting
+1324_B. Yet Another Palindrome Problem
+1493_F. Enchanted Matrix
+1511_F. Chainword
+1201_C. Maximum Median
+1201_D. Treasure Hunting
+1511_E. Colorings and Dominoes
+1467_C. Three Bags
+1381_E. Origami
+1452_C. Two Brackets
+1467_A. Wizard of Orz
+1380_F. Strange Addition
+1452_D. Radio Towers
+1467_E. Distinctive Roots in a Tree
+1474_F. 1 2 3 4 ...
+1452_E. Two Editorials
+1474_C. Array Destruction
+1453_B. Suffix Operations
+1539_B. Love Song
+1474_E. What Is It?
+1338_E. JYPnation
+1539_F. Strange Array
+1341_D. Nastya and Scoreboard
+1539_C. Stable Groups
+1341_A. Nastya and Rice
+1539_E. Game with Cards
+1176_C. Lose it!
+1176_D. Recover it!
+1360_G. A/B Matrix
+1464_F. My Beautiful Madness
+1176_E. Cover it!
+1361_B. Johnny and Grandmaster
+413_C. Jeopardy!
+1253_F. Cheap Robot
+413_D. 2048
+1361_C. Johnny and Megan's Necklace
+1442_B. Identify the Operations
+413_E. Maze 2D
+1361_A. Johnny and Contribution
+1542_A. Odd Set
+1521_C. Nastia and a Hidden Permutation
+1442_F. Differentiating Games
+321_A. Ciel and Robot
+1442_C. Graph Transpositions
+903_D. Almost Difference
+1521_D. Nastia Plays with a Tree
+1283_B. Candies Division
+1442_D. Sum
+1521_E. Nastia and a Beautiful Matrix
+1283_F. DIY Garland
+1442_E. Black, White and Grey Tree
+1419_F. Rain of Fire
+1295_F. Good Contest
+1278_F. Cards
+1419_C. Killjoy
+1295_C. Obtain The String
+1278_A. Shuffle Hashing
+1419_A. Digit Game
+1434_B. Shurikens
+1208_B. Uniqueness
+1434_D. Roads and Ramen
+1208_F. Bits And Pieces
+1326_C. Permutation Partitions
+1434_A. Perform Easily
+1208_C. Magic Grid
+1326_D2. Prefix-Suffix Palindrome (Hard version)
+1434_E. A Convex Game
+1326_F2. Wise Men (Hard Version)
+1261_F. Xor-Set
+1208_A. XORinacci
+1499_F. Diameter Cuts
+1492_C. Maximum width
+1499_G. Graph Coloring
+1261_A. Messy
+1499_D. The Number of Pairs
+1271_F. Divide The Students
+1492_E. Almost Fault-Tolerant Database
+1438_C. Engineer Artem
+1539_D. PriceFixed
+1271_C. Shawarma Tent
+1363_B. Subsequence Hate
+1271_A. Suits
+1515_B. Phoenix and Puzzle
+1363_F. Rotating Substrings
+1271_E. Common Number
+1515_G. Phoenix and Odometers
+1363_D. Guess The Maximums
+1478_C. Nezzar and Symmetric Array
+1515_H. Phoenix and Bits
+543_C. Remembering Strings
+1345_D. Monopole Magnets
+1363_E. Tree Shuffling
+1515_I. Phoenix and Diamonds
+1345_E. Quantifier Question
+1515_E. Phoenix and Computers
+1249_F. Maximum Weight Subset
+1406_A. Subset Mex
+1249_D2. Too Many Segments (hard version)
+1307_B. Cow and Friend
+1249_B2. Books Exchange (hard version)
+1407_E. Egor in the Republic of Dagestan
+1294_E. Obtain a Permutation
+1249_C2. Good Numbers (hard version)
+1307_G. Cow and Exercise
+1328_B. K-th Beautiful String
+1249_C1. Good Numbers (easy version)
+1307_C. Cow and Message
+1328_F. Make k Equal
+1249_D1. Too Many Segments (easy version)
+1307_E. Cow and Treats
+1328_A. Divisibility Problem
+1249_A. Yet Another Dividing into Teams
+1328_E. Tree Queries
+1350_D. Orac and Medians
+1450_C1. Errich-Tac-Toe (Easy Version)
+1538_B. Friends and Candies
+1450_A. Avoid Trygub
+1350_E. Orac and Game of Life
+1538_D. Another Problem About Dividing Numbers
+1466_F. Euclid's nightmare
+1215_B. The Number of Products
+1187_F. Expected Square Beauty
+1215_F. Radio Stations
+1466_G. Song of the Sirens
+1187_G. Gang Up
+1466_H. Finding satisfactory solutions
+1215_D. Ticket Game
+1476_B. Inflation
+1187_C. Vasya And Array
+1476_A. K-divisible Sum
+1187_E. Tree Painting
+47_B. Coins
+1398_D. Colored Rectangles
+1476_E. Pattern Matching
+1304_B. Longest Palindrome
+1426_B. Symmetric Matrix
+47_C. Crossword
+1426_F. Number of Subsequences
+1399_E1. Weights Division (easy version)
+47_E. Cannon
+1447_A. Add Candies
+1203_B. Equal Rectangles
+1216_C. White Sheet
+1216_D. Swords
+1203_C. Common Divisors
+1265_F. Beautiful Bracket Sequence (easy version)
+1203_D2. Remove the Substring (hard version)
+1312_C. Adding Powers
+1265_C. Beautiful Regional Contest
+1203_F1. Complete the Projects (easy version)
+1312_D. Count the Arrays
+1265_D. Beautiful Sequence
+1322_F. Assigning Fares
+1312_E. Array Shrinking
+1265_A. Beautiful String
+1311_A. Add Odd or Subtract Even
+1257_A. Two Rival Students
+1265_E. Beautiful Mirrors
+1311_E. Construct the Binary Tree
+1257_E. The Contest
+1255_C. League of Leesins
+1335_D. Anti-Sudoku
+1255_E2. Send Boxes to Alice (Hard Version)
+1343_F. Restore the Permutation by Sorted Segments
+123_D. String
+1343_C. Alternating Subsequence
+123_A. Prime Permutation
+37_C. Old Berland Language
+1343_A. Candies
+37_E. Trial for Chief
+1342_B. Binary Period
+477_C. Dreamoon and Strings
+1342_C. Yet Another Counting Problem
+1076_B. Divisor Subtraction
+477_A. Dreamoon and Sums
+1202_B. You Are Given a Decimal String...
+1342_A. Road To Zero
+1277_C. As Simple as One and Two
+477_E. Dreamoon and Notepad
+1202_D. Print a 1337-string...
+1305_B. Kuroni and Simple Strings
+60_C. Mushroom Strife
+1246_B. Power Products
+1202_A. You Are Given Two Binary Strings...
+1316_B. String Modification
+1246_C. Rock Is Push
+1316_C. Primitive Primes
+1202_E. You Are Given Some Strings...
+1182_B. Plus from Picture
+1316_A. Grade Allocation
+1372_B. Omkar and Last Class of Math
+1372_F. Omkar and Modes
+1369_F. BareLee
+1182_E. Product Oriented Recurrence
+1332_G. No Monotone Triples
+1372_D. Omkar and Circle
+1369_E. DeadLee
+1332_E. Height All the Same
+17_B. Hierarchy
+1372_A. Omkar and Completion
+1324_D. Pair of Topics
+17_C. Balance
+1324_A. Yet Another Tetris Problem
+17_D. Notepad
+1372_E. Omkar and Last Floor
+17_A. Noldbach problem
+1159_F. Winding polygonal line
+1440_C2. Binary Table (Hard Version)
+1440_A. Buy the String
+1159_C. The Party and Sweets
+1440_E. Greedy Shopping
+1159_D. The minimal unique substring
+1498_F. Christmas Game
+1159_E. Permutation recovery
+1228_D. Complete Tripartite
+1498_C. Planar Reflections
+1519_F. Chests and Keys
+1228_A. Distinct Digits
+1205_C. Palindromic Paths
+1421_B. Putting Bricks in the Wall
+1519_A. Red and Blue Beans
+1205_D. Almost All
+1461_B. Find the Spruce
+1421_C. Palindromifier
+1421_E. Swedish Heroes
+1461_C. Random Events
+1205_E. Expected Value Again
+1461_A. String Generation
+1409_C. Yet Another Array Restoration
+1183_F. Topforces Strikes Back
+1471_A. Strange Partition
+1409_D. Decrease the Sum of Digits
+25_C. Roads in Berland
+1183_H. Subsequences (hard version)
+25_D. Roads not only in Berland
+1183_A. Nearest Interesting Number
+25_A. IQ test
+1547_F. Array Stabilization (GCD version)
+1409_E. Two Platforms
+25_E. Test
+1185_B. Email from Polycarp
+1547_C. Pair Programming
+1185_F. Two Pizzas
+1348_C. Phoenix and Distribution
+1185_C2. Exam in BerSU (hard version)
+1157_C2. Increasing Subsequence (hard version)
+1348_D. Phoenix and Science
+1157_F. Maximum Balanced Circle
+1185_C1. Exam in BerSU (easy version)
+845_B. Luba And The Ticket
+1398_A. Bad Triangle
+615_A. Bulbs
+868_A. Bark to Unlock
+1485_A. Add and Divide
+1198_A. MP3
+1256_C. Platforms Jumping
+1433_E. Two Round Dances
+137_B. Permutation
+137_C. History
+137_A. Postcards and photos
+1181_A. Chunga-Changa
+1393_C. Pinkie Pie Eats Patty-cakes
+1408_B. Arrays Sum
+1393_E2. Twilight and Ancient Scroll (harder version)
+1172_D. Nauuo and Portals
+720_D. Slalom
+69_A. Young Physicist
+1172_A. Nauuo and Cards
+742_A. Arpa’s hard exam and Mehrdad’s naive cheat
+380_C. Sereja and Brackets
+380_D. Sereja and Cinema
+1401_D. Maximum Distributed Tree
+914_F. Substrings in a String
+79_D. Password
+1542_E2. Abnormal Permutation Pairs (hard version)
+1304_E. 1-Trees and Queries
+1401_E. Divide Square
+14_E. Camels
+1196_B. Odd Sum Segments
+1207_F. Remainder Problem
+1207_G. Indie Album
+1408_A. Circle Coloring
+1144_B. Parity Alternated Deletions
+1408_E. Avoid Rainbow Cycles
+1512_E. Permutation by Sum
+1407_B. Big Vova
+271_C. Secret
+1303_F. Number of Components
+1303_G. Sum of Prefix Sums
+1285_F. Classical?
+1285_D. Dr. Evil Underscores
+1257_G. Divisor Set
+19_B. Checkout Assistant
+1257_F. Make Them Similar
+720_C. Homework
+228_B. Two Tables
+228_C. Fractal Detector
+228_D. Zigzag
+228_A. Is your horseshoe on the other hoof?
+626_C. Block Towers
+228_E. The Road to Berland is Paved With Good Intentions
+1293_B. JOE is on TV!
+95_A. Hockey
+754_C. Vladik and chat
+1293_A. ConneR and the A.R.C. Markland-N
+1304_F1. Animal Observation (easy version)
+1293_E. Xenon's Attack on the Gangs
+1534_A. Colour the Flag
+1155_F. Delivery Oligopoly
+1155_C. Alarm Clocks Everywhere
+1155_D. Beautiful Array
+1379_F1. Chess Strikes Back (easy version)
+1155_A. Reverse a Substring
+1166_B. All the Vowels Please
+1166_E. The LCMs Must be Large
+1368_D. AND, OR and square sum
+1175_G. Yet Another Partiton Problem
+18_B. Platforms
+1236_B. Alice and the List of Presents
+1236_A. Stones
+1054_B. Appending Mex
+1203_A. Circle of Students
+1487_F. Ones
+443_B. Kolya and Tandem Repeat
+1473_E. Minimum Path
+609_F. Frogs and mosquitoes
+622_A. Infinite Sequence
+1463_E. Plan of Lectures
+670_D1. Magic Powder - 1
+1198_C. Matching vs Independent Set
+1163_B2. Cat Party (Hard Edition)
+1163_C2. Power Transmission (Hard Edition)
+1288_D. Minimax Problem
+1163_A. Eating Soup
+1538_C. Number of Pairs
+1163_E. Magical Permutation
+1244_B. Rooms and Staircases
+1244_F. Chips
+1244_G. Running in Pairs
+1244_C. The Football Season
+22_C. System Administrator
+1209_B. Koala and Lights
+1209_E2. Rotate Columns (hard version)
+1209_G2. Into Blocks (hard version)
+1209_E1. Rotate Columns (easy version)
+1209_D. Cow and Snacks
+1209_A. Paint the Numbers
+1534_D. Lost Tree
+19_C. Deletion of Repeats
+1534_E. Lost Array
+1216_E1. Numerical Sequence (easy version)
+1159_A. A pile of stones
+1239_F. Swiper, no swiping!
+1395_E. Boboniu Walks on Graph
+1313_C2. Skyscrapers (hard version)
+1335_C. Two Teams Composing
+1234_B1. Social Network (easy version)
+1335_A. Candies and Two Sisters
+66_A. Petya and Java
+9_B. Running Student
+9_C. Hexadecimal's Numbers
+9_D. How many trees?
+1294_B. Collecting Packages
+1251_C. Minimize The Integer
+9_E. Interesting Graph and Apples
+1334_F. Strange Function
+1334_C. Circle of Monsters
+1334_D. Minimum Euler Cycle
+1288_F. Red-Blue Graph
+1091_C. New Year and the Sphere Transmission
+1257_C. Dominated Subarray
+14_C. Four Segments
+23_C. Oranges and Apples
+23_D. Tetragon
+506_C. Mr. Kitayuta vs. Bamboos
+1175_C. Electrification
+9_A. Die Roll
+1325_B. CopyCopyCopyCopyCopy
+1525_F. Goblins And Gnomes
+903_C. Boxes Packing
+479_D. Long Jumps
+1353_B. Two Arrays And Swaps
+748_B. Santa Claus and Keyboard Check
+1244_D. Paint the Tree
+1455_G. Forbidden Value
+746_A. Compote
+1428_E. Carrots for Rabbits
+1333_F. Kate and imperfection
+19_D. Points
+846_A. Curriculum Vitae
+1237_H. Balanced Reversals
+1454_F. Array Partition
+1454_D. Number into Sequence
+1287_B. Hyperset
+1287_E2. Madhouse (Hard version)
+1287_D. Numbers on Tree
+1236_C. Labs
+1513_F. Swapping Problem
+5_C. Longest Regular Bracket Sequence
+1238_B. Kill 'Em All
+1513_C. Add One
+1025_B. Weakened Common Divisor
+1513_E. Cost Equilibrium
+1545_E2. AquaMoon and Time Stop (hard version)
+1422_A. Fence
+1359_F. RC Kaboom Show
+1358_B. Maria Breaks the Self-isolation
+1209_C. Paint the Digits
+1444_D. Rectangular Polyline
+18_A. Triangle
+1379_F2. Chess Strikes Back (hard version)
+1379_D. New Passenger Trams
+1379_E. Inverse Genealogy
+37_A. Towers
+1178_B. WOW Factor
+1197_B. Pillars
+340_C. Tourist Problem
+340_D. Bubble Sort Graph
+340_E. Iahub and Permutations
+1246_D. Tree Factory
+1307_D. Cow and Fields
+1251_B. Binary Palindromes
+1370_F2. The Hidden Pair (Hard Version)
+749_A. Bachgold Problem
+1202_F. You Are Given Some Letters...
+1251_D. Salary Changing
+1056_B. Divide Candies
+1056_F. Write The Contest
+1056_C. Pick Heroes
+1056_H. Detect Robots
+1056_A. Determine Line
+95_B. Lucky Numbers
+95_D. Horse Races
+555_A. Case of Matryoshkas
+338_B. Book of Evil
+404_D. Minesweeper 1D
+338_A. Quiz
+300_C. Beautiful Numbers
+300_E. Empire Strikes Back
+1167_C. News Distribution
+1051_A. Vasya And Password
+1246_E. To Make 1
+1051_E. Vasya and Big Integers
+336_B. Vasily the Bear and Fly
+336_D. Vasily the Bear and Beautiful Strings
+938_C. Constructing Tests
+65_A. Harry Potter and Three Spells
+938_D. Buy a Ticket
+1093_B. Letters Rearranging
+1263_E. Editor
+1244_A. Pens and Pencils
+1328_D. Carousel
+1285_A. Mezo Playing Zoma
+152_C. Pocket Book
+1093_C. Mishka and the Last Exam
+1093_A. Dice Rolling
+1067_B. Multihedgehog
+799_G. Cut the pie
+799_C. Fountains
+799_A. Carrot Cakes
+593_D. Happy Tree Party
+593_A. 2Char
+1085_G. Beautiful Matrix
+1409_B. Minimum Product
+567_B. Berland National Library
+1444_E. Finding the Vertex
+567_D. One-Dimensional Battle Ships
+567_A. Lineland Mail
+509_B. Painting Pebbles
+1060_G. Balls and Pockets
+1060_D. Social Circles
+722_B. Verse Pattern
+743_E. Vladik and cards
+1060_A. Phone Numbers
+919_F. A Game With Numbers
+900_C. Remove Extra One
+954_F. Runner's Problem
+954_I. Yet Another String Matching Problem
+1166_C. A Tale of Two Lands
+1054_G. New Road Network
+1076_G. Array Game
+1203_E. Boxers
+1220_C. Substring Game in the Lesson
+954_A. Diagonal Walking
+1535_C. Unstable String
+114_E. Double Happiness
+373_A. Collecting Beats is Fun
+533_B. Work Group
+932_D. Tree
+1006_F. Xor-Paths
+1033_G. Chip Game
+391_F2. Stock Trading
+533_C. Board Game
+351_C. Jeff and Brackets
+533_D. Landmarks
+813_D. Two Melodies
+739_B. Alyona and a tree
+884_E. Binary Matrix
+1271_D. Portals
+739_D. Recover a functional graph
+1033_D. Divisors
+1033_E. Hidden Bipartite Graph
+150_C. Smart Cheater
+362_C. Insertion Sort
+362_A. Two Semiknights Meet
+362_E. Petya and Pipes
+1364_A. XXXXX
+1315_E. Double Elimination
+26_E. Multithreading
+965_C. Greedy Arkady
+358_C. Dima and Containers
+965_A. Paper Airplanes
+1005_C. Summarize to the Power of Two
+1005_D. Polycarp and Div 3
+262_D. Maxim and Restaurant
+1013_C. Photo of The Sky
+1260_A. Heating
+1461_F. Mathematical Expression
+1461_E. Water Level
+1268_B. Domino for Young
+1181_E2. A Story of One Country (Hard)
+991_D. Bishwock
+1408_G. Clusterization Counting
+166_B. Polygons
+166_C. Median
+996_D. Suit and Tie
+493_A. Vasya and Football
+996_A. Hit the Lottery
+996_E. Leaving the Bar
+708_B. Recover the String
+962_B. Students in Railway Carriage
+1102_A. Integer Sequence Dividing
+962_G. Visible Black Areas
+962_D. Merge Equals
+1216_B. Shooting
+1312_G. Autocompletion
+353_C. Find Maximum
+353_D. Queue
+161_B. Discounts
+161_D. Distance in Tree
+777_A. Shell Game
+161_E. Polycarpus the Safecracker
+566_B. Replicating Processes
+566_G. Max and Min
+879_E. Tournament
+566_D. Restructuring Company
+1238_E. Keyboard Purchase
+1175_F. The Number of Subpermutations
+566_E. Restoring Map
+330_C. Purification
+330_D. Biridian Forest
+330_A. Cakeminator
+330_E. Graph Reconstruction
+803_G. Periodic RMQ Problem
+1221_B. Knights
+1330_E. Drazil Likes Heap
+1536_C. Diluc and Kaeya
+901_C. Bipartite Segments
+729_A. Interview with Oleg
+901_D. Weighting a Tree
+1095_B. Array Stabilization
+1095_A. Repeating Cipher
+391_F1. Stock Trading
+1095_E. Almost Regular Bracket Sequence
+559_C. Gerald and Giant Chess
+888_G. Xor-MST
+559_A. Gerald's Hexagon
+1061_F. Lost Root
+859_E. Desk Disorder
+1061_D. TV Shows
+1061_E. Politics
+1253_B. Silly Mistake
+1354_E. Graph Coloring
+1253_C. Sweets Eating
+1181_D. Irrigation
+1513_B. AND Sequences
+1059_B. Forgery
+1059_D. Nature Reserve
+344_A. Magnets
+69_D. Dot
+1059_E. Split the Tree
+595_E. Edo and Magnets
+939_B. Hamster Farm
+1182_D. Complete Mirror
+24_A. Ring road
+858_A. k-rounding
+939_C. Convenient For Everybody
+1498_D. Bananas in a Microwave
+1066_B. Heaters
+1066_F. Yet another 2D Walking
+798_A. Mike and palindrome
+406_E. Hamming Triples
+798_E. Mike and code of a permutation
+1092_B. Teams Forming
+1065_B. Vasya and Isolated Vertices
+1519_E. Off by One
+384_B. Multitasking
+1092_A. Uniform String
+906_B. Seating of Students
+1263_F. Economic Difficulties
+906_A. Shockers
+976_D. Degree Set
+765_C. Table Tennis Game 2
+765_D. Artsem and Saunders
+765_E. Tree Folding
+301_B. Yaroslav and Time
+301_D. Yaroslav and Divisors
+301_E. Yaroslav and Arrangements
+930_A. Peculiar apple-tree
+568_C. New Language
+469_A. I Wanna Be the Guy
+568_D. Sign Posts
+908_B. New Year and Buggy Bot
+908_D. New Year and Arbitrary Arrangement
+380_E. Sereja and Dividing
+796_F. Sequence Recovery
+796_C. Bank Hacking
+339_C. Xenia and Weights
+1104_A. Splitting into digits
+339_E. Three Swaps
+549_A. Face Detection
+639_A. Bear and Displayed Friends
+1433_B. Yet Another Bookshelf
+1493_A. Anti-knapsack
+399_C. Cards
+416_C. Booking System
+1003_B. Binary String Constructing
+1003_C. Intense Heat
+1003_E. Tree Constructing
+160_D. Edges in MST
+305_C. Ivan and Powers of Two
+736_B. Taxes
+736_D. Permutations
+736_E. Chess Championship
+1004_B. Sonya and Exhibition
+1004_D. Sonya and Matrix
+1004_A. Sonya and Hotels
+990_G. GCD Counting
+990_D. Graph And Its Complement
+1027_C. Minimum Value Rectangle
+1324_F. Maximum White Subtree
+437_D. The Child and Zoo
+720_A. Closing ceremony
+990_A. Commentary Boxes
+1528_E. Mashtali and Hagh Trees
+1294_C. Product of Three Numbers
+964_B. Messages
+964_C. Alternating Sum
+964_A. Splits
+540_B. School Marks
+731_C. Socks
+889_B. Restoration of string
+355_B. Vasya and Public Transport
+1133_D. Zero Quantity Maximization
+355_C. Vasya and Robot
+952_D. I'm Feeling Lucky!
+1085_F. Rock-Paper-Scissors Champion
+1175_B. Catch Overflow!
+952_A. Quirky Quantifiers
+952_E. Cheese Board
+1469_A. Regular Bracket Sequence
+999_B. Reversing Encryption
+999_F. Cards and Joy
+999_D. Equalize the Remainders
+1006_E. Military Problem
+363_C. Fixing Typos
+871_D. Paths
+140_F. New Year Snowflake
+813_C. The Tag Game
+151_A. Soft Drinking
+535_C. Tavas and Karafs
+535_E. Tavas and Pashmaks
+1311_D. Three Integers
+955_F. Heaps
+1217_A. Creating a Character
+955_D. Scissors
+955_E. Icicles
+70_A. Cookies
+1451_F. Nullify The Matrix
+700_B. Connecting Universities
+818_B. Permutation Game
+818_F. Level Generation
+818_C. Sofa Thief
+818_A. Diplomas and Certificates
+1335_B. Construct the String
+1381_C. Mastermind
+1381_A1. Prefix Flip (Easy Version)
+827_F. Dirty Arkady's Kitchen
+1178_C. Tiles
+1236_F. Alice and the Cactus
+827_C. DNA Evolution
+827_A. String Reconstruction
+1278_D. Segment Tree
+1299_A. Anu Has a Function
+1447_C. Knapsack
+827_E. Rusty String
+154_A. Hometask
+447_C. DZY Loves Sequences
+501_A. Contest
+600_A. Extract Numbers
+675_C. Money Transfers
+675_E. Trains and Statistic
+681_C. Heap Operations
+471_D. MUH and Cube Walls
+1178_E. Archaeology
+1447_E. Xor Tree
+471_E. MUH and Lots and Lots of Segments
+154_C. Double Profiles
+485_A. Factory
+1182_C. Beautiful Lyrics
+8_E. Beads
+1182_A. Filling Shapes
+1163_F. Indecisive Taxi Fee
+1304_D. Shortest and Longest LIS
+816_B. Karen and Coffee
+1512_A. Spy Detected!
+482_B. Interesting Array
+482_A. Diverse Permutation
+482_E. ELCA
+1388_B. Captain Flint and a Long Voyage
+727_C. Guess the Array
+911_A. Nearest Minimums
+1388_A. Captain Flint and Crew Recruitment
+1271_B. Blocks
+1388_E. Uncle Bogdan and Projections
+1240_F. Football
+220_C. Little Elephant and Shifts
+1343_D. Constant Palindrome Sum
+811_C. Vladik and Memorable Trip
+413_A. Data Recovery
+811_E. Vladik and Entertaining Flags
+845_D. Driving Test
+1076_A. Minimizing the String
+845_E. Fire in the City
+610_B. Vika and Squares
+1144_E. Median String
+610_A. Pasha and Stick
+393_B. Three matrices
+609_E. Minimum spanning tree for each edge
+610_E. Alphabet Permutations
+628_B. New Skateboard
+628_C. Bear and String Distance
+842_B. Gleb And Pizza
+842_A. Kirill And The Game
+351_D. Jeff and Removing Periods
+842_E. Nikita and game
+273_C. Dima and Horses
+617_C. Watering Flowers
+1326_A. Bad Ugly Numbers
+236_C. LCM Challenge
+426_C. Sereja and Swaps
+991_B. Getting an A
+621_B. Wet Shark and Bishops
+776_E. The Holmes Children
+1186_D. Vus the Cossack and Numbers
+245_B. Internet Address
+245_F. Log Stream Analysis
+245_H. Queries for Number of Palindromes
+245_E. Mishap in Club
+887_C. Solution for Cube
+1287_F. LCC
+887_E. Little Brother
+289_B. Polo the Penguin and Matrix
+1055_G. Jellyfish Nightmare
+1185_G2. Playlist for Polycarp (hard version)
+289_E. Polo the Penguin and XOR operation
+1215_A. Yellow Cards
+1113_A. Sasha and His Trip
+873_B. Balanced Substring
+873_C. Strange Game On Matrix
+23_E. Tree
+242_B. Big Segment
+242_C. King's Path
+414_B. Mashmokh and ACM
+414_C. Mashmokh and Reverse Operation
+414_A. Mashmokh and Numbers
+626_B. Cards
+626_D. Jerry's Protest
+399_D. Painting The Wall
+1389_F. Bicolored Segments
+1389_D. Segment Intersections
+1334_B. Middle Class
+1389_A. LCM Problem
+1514_B. AND 0, Sum Big
+545_A. Toy Cars
+1113_E. Sasha and a Patient Friend
+1148_B. Born This Way
+1148_C. Crazy Diamond
+1260_C. Infinite Fence
+226_B. Naughty Stone Piles
+226_C. Anniversary
+24_D. Broken robot
+226_A. Flying Saucer Segments
+413_B. Spyke Chatting
+1513_A. Array and Peaks
+509_E. Pretty Song
+219_B. Special Offer! Super Price 999 Bourles!
+219_A. k-String
+817_B. Makes And The Product
+495_D. Obsessive String
+868_F. Yet Another Minimization Problem
+915_F. Imbalance Value of a Tree
+817_C. Really Big Numbers
+1055_F. Tree and XOR
+817_A. Treasure Hunt
+1373_B. 01 Game
+1371_B. Magical Calendar
+1373_F. Network Coverage
+1436_C. Binary Search
+1373_C. Pluses and Minuses
+1373_D. Maximum Sum on Even Positions
+1373_A. Donut Shops
+817_D. Imbalanced Array
+1525_B. Permutation Sort
+889_A. Petya and Catacombs
+1525_C. Robot Collisions
+1108_D. Diverse Garland
+1020_E. Sergey's problem
+1525_E. Assimilation IV
+1322_A. Unusual Competitions
+821_B. Okabe and Banana Trees
+821_E. Okabe and El Psy Kongroo
+479_A. Expression
+22_E. Scheme
+819_E. Mister B and Flight to the Moon
+250_B. Restoring IPv6
+321_C. Ciel the Commander
+673_C. Bear and Colors
+673_A. Bear and Game
+1179_E. Alesya and Discrete Math
+585_B. Phillip and Trains
+1220_E. Tourism
+1380_G. Circular Dungeon
+1246_A. p-binary
+1287_A. Angry Students
+768_C. Jon Snow and his Favourite Number
+1417_E. XOR Inverse
+1434_C. Solo mid Oracle
+1350_A. Orac and Factors
+466_E. Information Graph
+630_L. Cracking the Code
+1380_A. Three Indices
+1146_D. Frog Jumping
+1029_B. Creating the Contest
+618_B. Guess the Permutation
+618_C. Constellation
+358_E. Dima and Kicks
+1113_D. Sasha and One More Name
+412_C. Pattern
+412_E. E-mail Addresses
+897_C. Nephren gives a riddle
+620_D. Professor GukiZ and Two Arrays
+620_E. New Year Tree
+606_C. Sorting Railway Cars
+678_B. The Same Calendar
+652_D. Nested Segments
+837_G. Functions On The Segments
+1163_D. Mysterious Code
+888_B. Buggy Robot
+1120_A. Diana and Liana
+888_F. Connecting Vertices
+1187_A. Stickers and Toys
+370_D. Broken Monitor
+888_D. Almost Identity Permutations
+424_C. Magic Formulas
+793_C. Mice problem
+632_A. Grandma Laura and Apples
+469_B. Chat Online
+424_A. Squats
+616_F. Expensive Strings
+1237_E. Balanced Binary Search Trees
+1221_G. Graph And Numbers
+616_C. The Labyrinth
+1288_C. Two Arrays
+1486_F. Pairs of Paths
+616_D. Longest k-Good Segment
+616_E. Sum of Remainders
+950_D. A Leapfrog in the Array
+844_B. Rectangles
+844_C. Sorting by Subsequences
+844_D. Interactive LowerBound
+844_A. Diversity
+611_G. New Year and Cake
+611_H. New Year and Forgotten Tree
+611_D. New Year and Ancient Prophecy
+382_B. Number Busters
+611_A. New Year and Days
+1238_C. Standard Free2play
+1198_B. Welfare State
+1256_D. Binary String Minimizing
+611_E. New Year and Three Musketeers
+713_E. Sonya Partymaker
+275_D. Zero Tree
+275_E. The Last Hole!
+859_B. Lazy Security Guard
+859_F. Ordering T-Shirts
+859_D. Third Month Insanity
+1155_B. Game with Telephone Numbers
+1139_B. Chocolates
+1139_A. Even Substrings
+1139_E. Maximize Mex
+892_C. Pride
+892_D. Gluttony
+892_A. Greed
+1106_B. Lunar New Year and Food Ordering
+1268_A. Long Beautiful Integer
+1290_B. Irreducible Anagrams
+1333_A. Little Artem
+1106_D. Lunar New Year and a Wander
+1106_E. Lunar New Year and Red Envelopes
+865_E. Hex Dyslexia
+406_D. Hill Climbing
+250_A. Paper Work
+250_E. Mad Joe
+1283_C. Friends and Gifts
+1504_A.  Déjà Vu
+1101_B. Accordion
+1101_F. Trucks and Cities
+391_C1. The Tournament
+1101_A. Minimum Integer
+628_D. Magic Numbers
+1101_E. Polycarp's New Job
+812_A. Sagheer and Crossroads
+1246_F. Cursor Distance
+1307_F. Cow and Vacation
+1185_G1. Playlist for Polycarp (easy version)
+895_C. Square Subsets
+895_D. String Mark
+1165_C. Good String
+439_B. Devu, the Dumb Guy
+439_C. Devu and Partitioning of the Array
+325_B. Stadium and Games
+439_D. Devu and his Brother
+393_A. Nineteen
+439_E. Devu and Birthday Celebration
+1108_B. Divisors of Two Integers
+1261_D1. Wrong Answer on test 233 (Easy Version)
+369_E. Valera and Queries
+201_E. Thoroughly Bureaucratic Organization
+1108_C. Nice Garland
+1205_B. Shortest Cycle
+868_C. Qualification Rounds
+678_F. Lena and Queries
+1288_B. Yet Another Meme Problem
+838_D. Airplane Arrangements
+868_E. Policeman and a Tree
+266_B. Queue at the School
+266_C. Below the Diagonal
+266_D. BerDonalds
+430_A. Points and Segments (easy)
+850_B. Arpa and a list of numbers
+1334_E. Divisor Paths
+850_F. Rainbow Balls
+850_D. Tournament Construction
+1369_D. TediousLee
+803_F. Coprime Subsequences
+803_D. Magazine Ad
+803_A. Maximal Binary Matrix
+490_B. Queue
+490_E. Restoring Increasing Sequence
+731_A. Night at the Museum
+232_C. Doe Graphs
+617_B. Chocolate
+822_F. Madness
+1255_E1. Send Boxes to Alice (Easy Version)
+1279_D. Santa's Bot
+1156_F. Card Bag
+1178_H. Stock Exchange
+533_E. Correcting Mistakes
+232_A. Cycles
+1322_E. Median Mountain Range
+232_E. Quick Tortoise
+499_A. Watching a movie
+340_B. Maximal Area Quadrilateral
+1367_B. Even Array
+1367_C. Social Distance
+1367_D. Task On The Board
+1367_A. Short Substrings
+107_D. Crime Management
+1249_B1. Books Exchange (easy version)
+835_F. Roads in the Kingdom
+835_E. The penguin's game
+1393_A. Rainbow Dash, Fluttershy and Chess Coloring
+1358_E. Are You Fired?
+1085_C. Connect Three
+660_B. Seating On Bus
+1295_D. Same GCDs
+137_E. Last Chance
+832_D. Misha, Grisha and Underground
+832_E. Vasya and Shifts
+1444_A. Division
+818_G. Four Melodies
+1545_B. AquaMoon and Chess
+1360_F. Spy-string
+667_D. World Tour
+919_B. Perfect Number
+1294_A. Collecting Coins
+294_B. Shaass and Bookshelf
+294_C. Shaass and Lights
+1296_C. Yet Another Walking Robot
+294_A. Shaass and Oskols
+436_C. Dungeons and Candies
+1438_F. Olha and Igor
+436_E. Cardboard Box
+1360_D. Buying Shovels
+404_A. Valera and X
+1517_H. Fly Around the World
+1545_F. AquaMoon and Potatoes
+424_B. Megacity
+431_A. Black Square
+377_D. Developing Game
+856_D. Masha and Cactus
+453_D. Little Pony and Elements of Harmony
+856_A. Set Theory
+1185_A. Ropewalkers
+258_B. Little Elephant and Elections
+780_A. Andryusha and Socks
+1285_E. Delete a Segment
+258_C. Little Elephant and LCM
+1136_C. Nastya Is Transposing Matrices
+407_B. Long Path
+1244_E. Minimizing Difference
+407_C. Curious Array
+1456_E. XOR-ranges
+407_D. Largest Submatrix 3
+407_A. Triangle
+635_B. Island Puzzle
+635_C. XOR Equation
+635_D. Factory Repairs
+988_A. Diverse Team
+251_C. Number Transformation
+251_D. Two Sets
+251_A. Points on Line
+1238_G. Adilbek and the Watering System
+1138_E. Museums Tour
+251_E. Tree and Table
+894_B. Ralph And His Magic Field
+1221_F. Choose a Square
+894_D. Ralph And His Tour in Binary Country
+894_E. Ralph and Mushrooms
+1538_A. Stone Game
+631_B. Print Check
+514_C. Watto and Mechanism
+65_E. Harry Potter and Moving Staircases
+1138_B. Circus
+1063_F. String Journey
+1316_F. Battalion Strength
+858_B. Which floor?
+858_F. Wizard's Tour
+1037_F. Maximum Reduction
+954_C. Matrix Walk
+858_C. Did you mean...
+1312_A. Two Regular Polygons
+858_E. Tests Renumeration
+632_B. Alice, Bob, Two Teams
+975_A. Aramic script
+615_B. Longtail Hedgehog
+70_D. Professor's task
+990_F. Flow Control
+632_F. Magic Matrix
+632_D. Longest Subsequence
+632_E. Thief in a Shop
+140_D. New Year Contest
+893_B. Beautiful Divisors
+711_D. Directed Roads
+321_E. Ciel and Gondolas
+893_F. Subtree Minimum Query
+893_C. Rumor
+893_E. Counting Arrays
+768_E. Game of Stones
+859_C. Pie Rules
+269_C. Flawed Flow
+269_A. Magical Boxes
+1209_G1. Into Blocks (easy version)
+1102_F. Elongated Matrix
+1541_E1. Converging Array (Easy Version)
+1313_D. Happy New Year
+1542_C. Strange Function
+1379_A. Acacius and String
+1153_F. Serval and Bonus Problem
+1153_D. Serval and Rooted Tree
+659_D. Bicycle Race
+1395_B. Boboniu Plays Chess
+1395_F. Boboniu and String
+895_E. Eyes Closed
+1395_C. Boboniu and Bit Operations
+834_C. The Meaningless Game
+1392_F. Omkar and Landslide
+1541_D. Tree Array
+1392_G. Omkar and Pies
+1392_C. Omkar and Waterslide
+1392_H. ZS Shuffles Cards
+1392_D. Omkar and Bed Wars
+1366_B. Shuffle
+165_B. Burning Midnight Oil
+1366_G. Construct the String
+1462_D. Add to Neighbour and Remove
+469_D. Two Sets
+107_C. Arrangement
+109_B. Lucky Probability
+1332_B. Composite Coloring
+1462_C. Unique Number
+1366_C. Palindromic Paths
+1511_A. Review Site
+1366_A. Shovels and Swords
+1538_F. Interesting Function
+1154_F. Shovels Shop
+1154_G. Minimum Possible LCM
+376_A. Lever
+420_D. Cup Trick
+453_B. Little Pony and Harmony Chest
+453_C. Little Pony and Summer Sun Celebration
+453_A. Little Pony and Expected Maximum
+1379_C. Choosing flowers
+1209_H. Moving Walkways
+205_B. Little Elephant and Sorting
+205_D. Little Elephant and Cards
+1345_C. Hilbert's Hotel
+1359_E. Modular Stability
+465_A. inc ARG
+465_E. Substitutes in Number
+166_D. Shoe Store
+462_B. Appleman and Card Game
+462_A. Appleman and Easy Task
+811_A. Vladik and Courtesy
+981_G. Magic multisets
+1268_C. K Integers
+462_E. Appleman and a Sheet of Paper
+1353_F. Decreasing Heights
+650_C. Table Compression
+650_D. Zip-line
+650_A. Watchmen
+650_E. Clockwork Bomb
+346_B. Lucky Common Subsequence
+346_C. Number Transformation II
+1541_A. Pretty Permutations
+346_A. Alice and Bob
+346_E. Doodle Jump
+722_F. Cyclic Cipher
+1217_D. Coloring Edges
+1240_A. Save the Nature
+1345_B. Card Constructions
+722_D. Generating Sets
+1239_C. Queue in the Train
+1028_B. Unnatural Conditions
+339_D. Xenia and Bit Operations
+1028_G. Guess the number
+977_B. Two-gram
+977_F. Consecutive Subsequence
+1239_D. Catowice City
+977_A. Wrong Subtraction
+379_B. New Year Present
+1023_E. Down or Right
+1175_A. From Hero to Zero
+1239_A. Ivan the Fool and the Probability Theory
+1197_C. Array Splitting
+379_C. New Year Ratings Change
+1487_G. String Counting
+1113_C. Sasha and a Bit of Relax
+1487_C. Minimum Ties
+923_C. Perfect Security
+950_E. Data Center Maintenance
+1367_E. Necklace Assembly
+1487_A. Arena
+1487_E. Cheap Dinner
+983_A. Finite or not?
+391_A. Genetic Engineering
+1473_B. String LCM
+725_C. Hidden Word
+722_C. Destroying Array
+725_D. Contest Balloons
+979_B. Treasure Hunt
+1545_D. AquaMoon and Wrong Coordinate
+979_D. Kuro and GCD and XOR and SUM
+979_A. Pizza, Pizza, Pizza!!!
+1091_A. New Year and the Christmas Ornament
+377_B. Preparing for the Contest
+377_C. Captains Mode
+377_A. Maze
+713_B. Searching Rectangles
+713_C. Sonya and Problem Wihtout a Legend
+713_D. Animals and Puzzle
+250_D. Building Bridge
+946_F. Fibonacci String Subsequences
+391_E1. Three Trees
+946_C. String Transformation
+946_A. Partition
+946_E. Largest Beautiful Number
+1315_F. Au Pont Rouge
+526_B. Om Nom and Dark Park
+1197_F. Coloring Game
+232_D. Fence
+526_C. Om Nom and Candies
+1039_E. Summer Oenothera Exhibition
+526_A. King of Thieves
+1523_A. Game of Life
+370_B. Berland Bingo
+370_A. Rook, Bishop and King
+519_B. A and B and Compilation Errors
+999_E. Reachability from the Capital
+519_E. A and B and Lecture Rooms
+189_C. Permutations
+189_D. AlgoRace
+1167_A. Telephone Number
+1185_D. Extra Element
+1287_C. Garland
+189_E. Weak Memory
+915_B. Browser
+1187_B. Letters Shop
+1168_E. Xor Permutations
+915_E. Physical Education Lessons
+1352_E. Special Elements
+499_C. Crazy Town
+572_D. Minimization
+935_B. Fafa and the Gates
+988_F. Rain and Umbrellas
+1358_F. Tasty Cookie
+572_A. Arrays
+778_C. Peterson Polyglot
+1172_F. Nauuo and Bug
+912_B. New Year's Eve
+912_A. Tricky Alchemy
+581_B. Luxurious Houses
+1217_E. Sum Queries?
+1408_I. Bitwise Magic
+18_E. Flag 2
+1526_F. Median Queries
+400_D. Dima and Bacteria
+581_F. Zublicanes and Mumocrates
+581_D. Three Logos
+581_A. Vasya the Hipster
+344_E. Read Time
+581_E. Kojiro and Furrari
+477_D. Dreamoon and Binary
+939_F. Cutlet
+747_B. Mammoth's Genome Decoding
+1358_D. The Best Vacation
+747_F. Igor and Interesting Numbers
+747_C. Servers
+66_E. Petya and Post
+747_A. Display Size
+1020_B. Badge
+1044_F. DFS
+780_H. Intranet of Buses
+1044_E. Grid Sort
+1420_E. Battle Lemmings
+543_B. Destroying Roads
+543_D. Road Improvement
+1196_A. Three Piles of Candies
+1178_A. Prime Minister
+1236_D. Alice and the Doll
+876_A. Trip For Meal
+1278_B. A and B
+1471_B. Strange List
+1447_B. Numbers Box
+749_B. Parallelogram is Back
+749_D. Leaving Auction
+5_D. Follow Traffic Rules
+1427_F. Boring Card Game
+1526_B. I Hate 1111
+1427_G. One Billion Shades of Grey
+1427_C. The Hard Work of Paparazzi
+1427_E. Xum
+1260_F. Colored Tree
+312_C. The Closest Pair
+1240_E. Wooden Raft
+1283_A. Minutes Before the New Year
+1313_E. Concatenation with intersection
+1345_F. Résumé Review
+509_C. Sums of Digits
+652_C. Foe Pairs
+312_A. Whose sentence is it?
+776_B. Sherlock and his girlfriend
+837_F. Prefix Sums
+776_F. Sherlock's bet to Moriarty
+1088_B. Ehab and subtraction
+1088_A. Ehab and another construction problem
+1088_E. Ehab and a component choosing problem
+1198_E. Rectangle Painting 2
+385_B. Bear and Strings
+1027_B. Numbers on the Chessboard
+14_A. Letter
+385_C. Bear and Prime Numbers
+385_A. Bear and Raspberry
+385_E. Bear in the Field
+437_C. The Child and Toy
+527_E. Data Center Drama
+371_B. Fox Dividing Cheese
+371_C. Hamburgers
+371_E. Subway Innovation
+1294_F. Three Paths on a Tree
+1251_F. Red-White Fence
+1020_C. Elections
+1020_A. New Building for SIS
+1167_F. Scalar Queries
+1288_A. Deadline
+1371_D. Grid-00100
+940_D. Alena And The Heater
+518_F. Pasha and Pipe
+518_C. Anya and Smartphone
+518_D. Ilya and Escalator
+518_A. Vitaly and Strings
+518_E. Arthur and Questions
+376_B. I.O.U.
+978_F. Mentors
+1330_C. Dreamoon Likes Coloring
+978_G. Petya's Exams
+1393_B. Applejack and Storages
+1217_B. Zmei Gorynich
+978_D. Almost Arithmetic Progression
+978_E. Bus Video System
+1501_A. Alexey and Train
+712_B. Memory and Trident
+712_C. Memory and De-Evolution
+748_F. Santa Clauses and a Soccer Championship
+382_C. Arithmetic Progression
+911_C. Three Garlands
+888_E. Maximum Subsequence
+382_E. Ksenia and Combinatorics
+349_C. Mafia
+349_E. Subset Sums
+495_E. Helping People
+1027_F. Session in BSU
+1102_E. Monotonic Renumeration
+1209_F. Koala and Notebook
+1031_D. Minimum path
+1027_D. Mouse Hunt
+1054_D. Changing Array
+1165_F2. Microtransactions (hard version)
+1027_A. Palindromic Twist
+724_B. Batch Sort
+1481_E. Sorting Books
+393_E. Yet Another Number Sequence
+1475_B. New Year's Number
+1029_F. Multicolored Markers
+630_G. Challenge Pennants
+1029_C. Maximal Intersection
+1029_A. Many Equal Substrings
+1029_E. Tree with Small Distances
+1133_C. Balanced Team
+723_F. st-Spanning Tree
+723_A. The New Year: Meeting Friends
+1486_A. Shifting Stacks
+404_B. Marathon
+1472_C. Long Jumps
+1472_D. Even-Odd Game
+1251_A. Broken Keyboard
+982_D. Shark
+982_E. Billiard
+1016_B. Segment Occurrences
+1155_E. Guess the Root
+1236_E. Alice and the Unfair Game
+1108_A. Two distinct points
+1016_D. Vasya And The Matrix
+5_E. Bindian Signalizing
+1486_B. Eastern Exhibition
+1526_A. Mean Inequality
+69_C. Game
+1486_D. Max Median
+742_C. Arpa's loud Owf and Mehrdad's evil plan
+1486_E. Paired Payment
+1190_E. Tokitsukaze and Explosion
+1039_D. You Are Given a Tree
+1542_D. Priority Queue
+1293_F. Chaotic V.
+1379_B. Dubious Cyrpto
+976_E. Well played!
+1426_A. Floor Number
+380_B. Sereja and Tree
+1042_C. Array Product
+1272_A. Three Friends
+1295_B. Infinite Prefixes
+1132_E. Knapsack
+748_C. Santa Claus and Robot
+748_D. Santa Claus and a Palindrome
+922_E. Birds
+1419_D2. Sage's Birthday (hard version)
+734_A. Anton and Danik
+313_B. Ilya and Queries
+572_B. Order Book
+313_E. Ilya and Two Numbers
+545_B. Equidistant String
+545_C. Woodcutters
+1239_B. The World Is Just a Programming Task (Hard Version)
+1216_A. Prefixes
+1178_F2. Long Colorful Strip
+1196_F. K-th Path
+545_D. Queue
+1324_E. Sleeping Schedule
+777_B. Game of Credit Cards
+1322_C. Instant Noodles
+1383_D. Rearrange
+1365_E. Maximum Subsequence Value
+14_D. Two Paths
+777_C. Alyona and Spreadsheet
+506_D. Mr. Kitayuta's Colorful Graph
+913_C. Party Lemonade
+555_E. Case of Computer Network
+807_D. Dynamic Problem Scoring
+913_A. Modular Exponentiation
+950_B. Intercepted Message
+913_E. Logical Expression
+903_A. Hungry Student Problem
+879_D. Teams Formation
+1417_B. Two Arrays
+1417_F. Graph and Queries
+1417_C. k-Amazing Numbers
+1178_G. The Awesomest Vertex
+1322_D. Reality Show
+1033_C. Permutation Game
+1073_F. Choosing Two Paths
+1073_G. Yet Another LCP Problem
+1536_F. Omkar and Akmar
+387_B. George and Round
+1073_C. Vasya and Robot
+1073_E. Segment Sum
+746_C. Tram
+514_B. Han Solo and Lazer Gun
+746_D. Green and Black Tea
+923_A. Primal Sport
+749_E. Inversions After Shuffle
+746_E. Numbers Exchange
+976_A. Minimum Binary Number
+580_A. Kefa and First Steps
+1420_C1. Pokémon Army (easy version)
+1428_D. Bouncing Boomerangs
+1428_A. Box is Pull
+1408_F. Two Different
+1514_D. Cut and Stick
+411_B. Multi-core Processor
+1_B. Spreadsheets
+1514_E. Baby Ehab's Hyper Apartment
+914_B. Conan and Agasa play a Card Game
+69_E. Subsegments
+914_G. Sum the Fibonacci
+914_C. Travelling Salesman and Special Numbers
+914_A. Perfect Squares
+1183_B. Equalize Prices
+914_E. Palindromes in a Tree
+1142_A. The Beatles
+1080_B. Margarite and the best present
+1080_F. Katya and Segments Sets
+1145_A. Thanos Sort
+1080_D. Olya and magical square
+1080_A. Petya and Origami
+1534_F1. Falling Sand (Easy Version)
+205_A. Little Elephant and Rozdil
+1080_E. Sonya and Matrix Beauty
+573_A. Bear and Poker
+747_E. Comments
+812_B. Sagheer, the Hausmeister
+573_E. Bear and Bowling
+325_C. Monsters and Diamonds
+325_D. Reclamation
+1296_F. Berland Beauty
+325_E. The Red Button
+1073_D. Berland Fair
+950_F. Curfew
+1454_C. Sequence Transformation
+1207_D. Number Of Permutations
+1368_F. Lamps on a Circle
+1333_D. Challenges in school №41
+1454_A. Special Permutation
+1037_G. A Game on Strings
+391_E2. Three Trees
+441_A. Valera and Antique Items
+1037_D. Valid BFS?
+1296_E2. String Coloring (hard version)
+723_E. One-Way Reform
+377_E. Cookie Clicker
+1296_E1. String Coloring (easy version)
+1037_A. Packets
+1296_D. Fight with Monsters
+1453_D. Checkpoints
+359_D. Pair of Numbers
+359_A. Table
+1082_B. Vova and Trophies
+359_E. Neatness
+957_B. Mystical Mosaic
+1181_C. Flag
+1216_F. Wi-Fi
+957_C. Three-level Laser
+957_A. Tritonic Iridescence
+1008_B. Turn the Rectangles
+1408_D. Searchlights
+379_D. New Year Letter
+1008_D. Pave the Parallelepiped
+19_E. Fairy
+1008_E. Guess two numbers
+868_D. Huge Strings
+366_B. Dima and To-do List
+366_C. Dima and Salad
+366_A. Dima and Guards
+1491_B. Minimal Cost
+1545_A. AquaMoon and Strange Sort
+1517_B. Morning Jogging
+13_C. Sequence
+382_A. Ksenia and Pan Scales
+359_B. Permutation
+961_A. Tetris
+961_E. Tufurama
+196_C. Paint Tree
+350_B. Resort
+667_B. Coat of Anticubism
+350_A. TL
+897_D. Ithea Plays With Chtholly
+350_E. Wrong Floyd
+506_B. Mr. Kitayuta's Technology
+506_A. Mr. Kitayuta, the Treasure Hunter
+1496_B. Max and Mex
+1547_B. Alphabetical Strings
+368_B. Sereja and Suffixes
+1156_D. 0-1-Tree
+1237_C2. Balanced Removals (Harder)
+368_A. Sereja and Coat Rack
+1006_B. Polycarp's Practice
+269_E. String Theory
+1006_A. Adjacent Replacements
+434_E. Furukawa Nagisa's Tree
+387_A. George and Sleep
+527_C. Glass Carving
+992_A. Nastya and an Array
+553_A. Kyoya and Colored Balls
+922_F. Divisibility
+1462_B. Last Year's Substring
+1462_E1. Close Tuples (easy version)
+1462_A. Favorite Sequence
+501_B. Misha and Changing Handles
+1138_A. Sushi for Two
+501_C. Misha and Forest
+1196_E. Connected Component on a Chessboard
+1178_F1. Short Colorful Strip
+501_E. Misha and Palindrome Degree
+1255_B. Fridge Lockers
+1447_F1. Frequency Problem (Easy Version)
+1044_D. Deduction Queries
+733_B. Parade
+733_F. Drivers Dissatisfaction
+733_D. Kostya the Sculptor
+1197_A. DIY Wooden Ladder
+1023_C. Bracket Subsequence
+1255_D. Feeding Chicken
+165_C. Another Problem on Strings
+831_D. Office Keys
+340_A. The Wall
+165_D. Beard Graph
+165_A. Supercentral Point
+167_A. Wizards and Trolleybuses
+1268_E. Happy Cactus
+959_A. Mahmoud and Ehab and the even-odd game
+25_B. Phone numbers
+1039_C. Network Safety
+767_B. The Queue
+1485_B. Replace and Keep Sorted
+22_D. Segments
+205_E. Little Elephant and Furik and Rubik
+767_C. Garland
+767_A. Snacktower
+555_D. Case of a Top Secret
+1409_A. Yet Another Two Integers Problem
+1214_E. Petya and Construction Set
+793_F. Julia the snail
+1029_D. Concatenated Multiples
+1194_G. Another Meme Problem
+793_G. Oleg and chess
+1133_F1. Spanning Tree with Maximum Degree
+1242_B. 0-1 MST
+932_F. Escape Through Leaf
+1283_D. Christmas Trees
+1368_A. C+=
+758_B. Blown Garland
+758_D. Ability To Convert
+1409_F. Subsequences of Length Two
+758_A. Holiday Of Equality
+552_B. Vanya and Books
+384_A. Coder
+678_D. Iterated Linear Function
+652_F. Ants on a Circle
+552_C. Vanya and Scales
+957_E. Contact ATC
+552_A. Vanya and Table
+1055_B. Alice and Hairdresser
+1055_D. Refactoring
+935_F. Fafa and Array
+1303_E. Erase Subsequences
+14_B. Young Photographer
+1523_G. Try Booking
+1528_F. AmShZ Farm
+935_C. Fifa and Fafa
+342_B. Xenia and Spies
+437_A. The Child and Homework
+109_E. Lucky Interval
+590_B. Chip 'n Dale Rescue Rangers
+590_C. Three States
+590_A. Median Smoothing
+590_E. Birthday
+1101_D. GCD Counting
+756_D. Bacterial Melee
+1196_D1. RGB Substring (easy version)
+1334_G. Substring Search
+1178_D. Prime Graph
+996_B. World Cup
+1237_A. Balanced Rating Changes
+332_C. Students' Revenge
+236_B. Easy Number Challenge
+1498_E. Two Houses
+756_A. Pavel and barbecue
+332_D. Theft of Blueprints
+915_D. Almost Acyclic Graph
+572_C. Lengthening Sticks
+332_A. Down the Hatch!
+332_E. Binary Key
+894_A. QAQ
+1063_B. Labyrinth
+1063_D. Candies for Children
+1407_D. Discrete Centrifugal Jumps
+8_D. Two Friends
+1085_B. Div Times Mod
+137_D. Palindromes
+1407_A. Ahahahahahahahaha
+13_D. Triangles
+903_G. Yet Another Maxflow Problem
+1316_E. Team Building
+1295_E. Permutation Separation
+23_A. You're Given a String...
+903_E. Swapping Characters
+499_B. Lecture
+1097_B. Petr and a Combination Lock
+1097_C. Yuhao and a Parenthesis
+734_D. Anton and Chess
+107_B. Basketball Team
+871_B. Something with XOR Queries
+335_F. Buy One, Get One Free
+1361_D. Johnny and James
+335_C. More Reclamation
+1181_B. Split a Number
+335_A. Banana
+384_E. Propagating tree
+335_E. Counting Skyscrapers
+98_B. Help King
+98_D. Help Monks
+69_B. Bets
+138_B. Digits Permutations
+138_D. World of Darkraft
+138_E. Hellish Constraints
+1463_B. Find The Array
+1237_C1. Balanced Removals (Easier)
+1322_B. Present
+196_D. The Next Good String
+1425_I. Impressive Harvesting of The Orchard
+527_B. Error Correct System
+552_E. Vanya and Brackets
+807_C. Success Rate
+1118_D1. Coffee and Coursework (Easy version)
+950_A. Left-handers, Right-handers and Ambidexters
+1463_C. Busy Robot
+1497_E1. Square-free division (easy version)
+369_D. Valera and Fools
+369_A. Valera and Plates
+967_B. Watering System
+747_D. Winter Is Coming
+967_D. Resource Distribution
+967_E. Big Secret
+1054_H. Epic Convolution

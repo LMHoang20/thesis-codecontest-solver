@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=True)
 
 HF_READ_TOKEN = os.getenv('HF_READ_TOKEN')
 HF_WRITE_TOKEN = os.getenv('HF_WRITE_TOKEN')
@@ -18,6 +18,7 @@ CLEAN_EDITORIAL_CONTENT_PATH = os.getenv('CLEAN_EDITORIAL_CONTENT_PATH')
 PROBLEM_URLS_PATH = os.getenv('PROBLEM_URLS_PATH')
 
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+print(GOOGLE_API_KEY)
 
 EDITORIAL_DATASET = os.getenv('EDITORIAL_DATASET')
 GENERATOR_MODEL_ID = os.getenv('GENERATOR_MODEL_ID')
