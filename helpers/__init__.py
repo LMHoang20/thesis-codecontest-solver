@@ -2,12 +2,28 @@ from datetime import datetime
 import nltk
 
 def remove_consecutive_line_breaks(text):
-	while '\n\n' in text:
-		text = text.replace('\n\n', '\n')
+	text = text.strip()
+	text = text.split('\n')
+	text = [text.rstrip() for text in text]
+	text = [text for text in text if text]
+	text = '\n'.join(text)
 	return text
 
 def get_session_id():
 	return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+def parse_solution(solution: str) -> tuple[str, str]:
+	solution = solution.strip()
+	assert solution.startswith('```cpp\n') or solution.startswith('```py\n'), "format error"
+	assert solution.endswith('```'), "format error"
+	if solution.startswith('```cpp\n'):
+		language = 'cpp'
+		code = solution.split('```cpp')[1].strip().split('```')[0].strip()
+	else:
+		language = 'py'
+		code = solution.split('```py')[1].strip().split('```')[0].strip()
+	return code, language
+
 
 const_unicode_replace = {
 	'\u2009': ' ',

@@ -1,0 +1,11 @@
+Let $A_i$ denote the binary string obtained after $i$ inverse-append steps, for example, $A_0 = 0$, $A_1 = 01$, and so on. Let $B_i = \overline{A_i}$. By definition, we must have $A_{i+1} = A_i B_i$ and $B_{i+1} = B_i A_i$.
+
+Let us store matrices $P_k$ and $Q_k$, with entries $P_k(v, u) = 1$ for pairs of vertices $v$ and $u$ such that there is an $A_k$-path from $v$ to $u$, and $Q_k(v, u) = 1$ for pairs of vertices $v$ and $u$ such that there is a $B_k$-path from $v$ to $u$. Note that $P_0$ and $Q_0$ are exactly the adjacency matrices with 0- and 1-arcs, respectively.
+
+Next, note that $P_{k+1}(v, u) = 1$ if and only if there exists a vertex $w$ such that $P_k(v, w) = Q_k(w, u) = 1$, and a similar condition can be written for $Q_{k+1}(v, u)$. It follows that $P_{k+1}$ and $Q_{k+1}$ can be computed using $P_k$ and $Q_k$ in $O(n^3)$ time (the method is basically boolean matrix multiplication: $P_{k+1} = P_k Q_k$, $Q_{k+1} = Q_k P_k$).
+
+To use the matrices $P_k$ and $Q_k$ to find the answer, let us store $L$, the largest answer found, and $S$, the set of vertices reachable from vertex 1 in exactly $L$ steps. We process $k$ by decreasing it from a certain value $k_0$, and see if $L$ can be increased by $2^k$. The next $2^k$ characters after the $L$-th position will form the string $A_k$ or $B_k$, depending on the popcount parity of $L$. Let $S'$ denote the set of vertices reachable from $S$ following $A_k$ or $B_k$. If $S'$ is non-empty, we can increase $L$ by $2^k$ and assign $S = S'$; otherwise, we do not change anything. In the end, $L$ will be the maximal path length as long as it is less than $2^{k_0}$.
+
+Note that we can take $k_0 = 60$ since we do not care about the exact value of the answer if it is greater than $2^{60}$. This results in an $O(k_0 n^3)$ solution, which is too slow. However, optimizing boolean multiplication with bitsets cuts the working time by $\sim 64$ times, and the solution is now fast enough.
+
+Complexity: $O(k_0 n^3 / w)$ time, and $O(k_0 n^2)$ memory. Here $k_0 = \log_2 10^{18}$, and $w = 64$ is the word length in bits.

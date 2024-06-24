@@ -5,6 +5,7 @@
     "dictionaries": [],
     "words": [
         "antiedge",
+        "asymptotics",
         "bruteforcingly",
         "deque",
         "genai",
@@ -16,6 +17,7 @@
         "subarray",
         "sweepline",
         "testcase",
+        "waterslide",
         "whitespaces"
     ],
     "ignoreWords": [],

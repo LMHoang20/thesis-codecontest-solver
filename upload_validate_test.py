@@ -45,7 +45,7 @@ def create_table_testing_problems():
             cf_contest_id INT NOT NULL,
             cf_index TEXT NOT NULL,
             cf_rating INT NOT NULL,
-            cf_tags TEXT NOT NULL,
+            cf_tags TEXT[] NOT NULL,
             split TEXT NOT NULL
         )
         """
@@ -62,14 +62,14 @@ def insert_to_db(sample, split):
         """
         INSERT INTO testing_problems (name, description, public_tests, private_tests, generated_tests, cf_contest_id, cf_index, cf_rating, cf_tags, split, solutions)
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        """, (sample['name'], sample['description'], Json(sample['public_tests']), Json(sample['private_tests']), Json(sample['generated_tests']), sample['cf_contest_id'], sample['cf_index'], str(sample['cf_rating']), ', '.join(sample['cf_tags']), split, Json(sample['solutions']))
+        """, (sample['name'], sample['description'], Json(sample['public_tests']), Json(sample['private_tests']), Json(sample['generated_tests']), sample['cf_contest_id'], sample['cf_index'], str(sample['cf_rating']), sample['cf_tags'], split, Json(sample['solutions']))
     )
     conn.commit()
     cursor.close()
     conn.close()
 
 if __name__ == '__main__':
-    login(HF_WRITE_TOKEN)
+    login(HF_READ_TOKEN)
     dataset_id = 'deepmind/code_contests'
     validate_set = datasets.load_dataset(dataset_id, split='valid', trust_remote_code=True, cache_dir='cache-validate')
     # validate_set = transform_columns(validate_set)

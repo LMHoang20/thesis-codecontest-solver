@@ -13,3 +13,4 @@
 {"rule":"DID_FOUND_AMBIGUOUS","sentence":"^\\QThen we can bound the values for \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q between \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
 {"rule":"FILL_OF_WITH","sentence":"^\\QThe logical thing to do is to fill the rest of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q with the numbers not in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q in increasing order.\\E$"}
 {"rule":"FILL_OF_WITH","sentence":"^\\QWe can use this observation to fill some indices of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"DID_FOUND_AMBIGUOUS","sentence":"^\\QWe can bound \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q by \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q We want to show that the query of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is smaller than \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

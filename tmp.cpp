@@ -1,66 +1,117 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <map>
+#include <limits>
 
 using namespace std;
 
-const int MAX_WIDTH = 10000;
-const int QUERIES = 5;
-const long long INF = 2e18;
-vector<vector<long long>> memo(QUERIES + 1, vector<long long>(MAX_WIDTH + 1, 0));
+const int INF = numeric_limits<int>::max();
+const int N = 500001;
 
-long long dp(int guesses, long long l) {
-    if (guesses == 0) {
-        return l;
+typedef pair<int, int> Pair;
+
+struct Node {
+    Pair value;
+    Node* left;
+    Node* right;
+
+    Node() : value(make_pair(INF, 0)), left(nullptr), right(nullptr) {}
+
+    Node(Node* left, Node* right) {
+        this->value = min(left->value, right->value);
+        this->left = left;
+        this->right = right;
     }
-    if (l > MAX_WIDTH) {
-        return min(INF, dp(guesses, MAX_WIDTH) + l - MAX_WIDTH);
+
+    Node(int pos, int val) {
+        this->value = make_pair(val, pos);
+        this->left = nullptr;
+        this->right = nullptr;
     }
-    if (memo[guesses][l] != 0) {
-        return memo[guesses][l];
+};
+
+typedef Node* SegmentTree;
+
+Pair query(SegmentTree tree, int left, int right, int queryLeft, int queryRight) {
+    if (queryLeft >= queryRight) {
+        return make_pair(INF, 0);
     }
-    long long ans = l;
-    for (int i = 0; i < l; ++i) {
-        ans = dp(guesses - 1, ans);
-        ++ans;
+
+    if (left == queryLeft && right == queryRight) {
+        return tree->value;
     }
-    ans = dp(guesses - 1, ans);
-    return memo[guesses][l] = min(ans, INF);
+
+    int mid = (left + right) / 2;
+    Pair q1 = query(tree->left, left, mid, queryLeft, min(mid, queryRight));
+    Pair q2 = query(tree->right, mid, right, max(mid, queryLeft), queryRight);
+    return min(q1, q2);
 }
 
-void run() {
-    long long l = 1;
-    long long r = dp(QUERIES, 1);
-    for (int queriesNext = QUERIES - 1; queriesNext >= 0; --queriesNext) {
-        vector<long long> query;
-        long long curL = l;
-        for (int i = 0, e = min(static_cast<int>(l), MAX_WIDTH); i < e; ++i) {
-            long long end = dp(queriesNext, curL);
-            query.push_back(end);
-            curL = end + 1;
+SegmentTree update(SegmentTree tree, int left, int right, int pos, int val) {
+    if (left == right - 1) {
+        return new Node(pos, val);
+    } else {
+        int mid = (left + right) / 2;
+        if (pos < mid) {
+            return new Node(update(tree->left, left, mid, pos, val), tree->right);
+        } else {
+            return new Node(tree->left, update(tree->right, mid, right, pos, val));
         }
-        assert(r == dp(queriesNext, curL));
-        cout << query.size();
-        for (long long x : query) {
-            cout << " " << x;
-        }
-        cout << endl;
-        cout.flush();
-        cin.clear();
-        int ans;
-        cin >> ans;
-        if (ans < 0) {
-            return;
-        }
-        if (ans > 0) {
-            l = query[ans - 1] + 1;
-        }
-        if (ans != query.size()) {
-            r = query[ans];
-        }
-        assert(dp(queriesNext, l) == r);
+    }
+}
+
+SegmentTree build(int left, int right) {
+    if (left == right - 1) {
+        return new Node(left, INF);
+    } else {
+        int mid = (left + right) / 2;
+        return new Node(build(left, mid), build(mid, right));
     }
 }
 
 int main() {
-    run();
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    vector<int> left(n);
+    map<int, int> last;
+    for (int i = 0; i < n; i++) {
+        if (!last.count(a[i])) {
+            left[i] = -1;
+        } else {
+            left[i] = last[a[i]];
+        }
+        last[a[i]] = i;
+    }
+
+    vector<SegmentTree> trees(n + 1);
+    trees[0] = build(0, n);
+    for (int i = 0; i < n; i++) {
+        SegmentTree currentTree = trees[i];
+        if (left[i] != -1) {
+            currentTree = update(currentTree, 0, n, left[i], INF);
+        }
+        currentTree = update(currentTree, 0, n, i, left[i]);
+        trees[i + 1] = currentTree;
+    }
+
+    int q;
+    cin >> q;
+    for (int i = 0; i < q; i++) {
+        int l, r;
+        cin >> l >> r;
+        --l;
+        Pair answer = query(trees[r], 0, n, l, r);
+        if (answer.first < l) {
+            cout << a[answer.second] << endl;
+        } else {
+            cout << "0" << endl;
+        }
+    }
+
     return 0;
 }

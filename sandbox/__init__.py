@@ -1,5 +1,6 @@
 import os
 import subprocess
+import time
 
 from logger import Logger
 from typing import List, Tuple
@@ -62,8 +63,21 @@ class PythonSandbox(Sandbox):
     def run(self, code: str, test_input: str):
         with open(self.script_file, 'w') as f:
             f.write(code + '\n')
+        while True:
+            with open(self.script_file, 'r') as f:
+                content = f.read()
+                if content == code + '\n':
+                    break
+            time.sleep(0.5)
+        compile_result = subprocess.run(['pyflakes', 'tmp.py'], capture_output=True, text=True)
+        compile_result = compile_result.stdout.split('\n')
+        compile_result = [line.strip() for line in compile_result if 'imported but unused' not in line]
         try:
-            result = subprocess.run(['timeout', '2s', 'python3', self.script_file], input=test_input, capture_output=True, text=True, timeout=5)
+            if len(compile_result) == 0:
+                result = subprocess.run(['timeout', '2s', 'python3', self.script_file], input=test_input, capture_output=True, text=True, timeout=5)
+            else:
+                print('py2')
+                result = subprocess.run(['timeout', '2s', 'python2', self.script_file], input=test_input, capture_output=True, text=True, timeout=5)
             return {
                 'stdout': result.stdout,
                 'stderr': result.stderr
@@ -93,7 +107,15 @@ class CppSandbox(Sandbox):
     def compile(self, code: str) -> str:
         with open(self.code_file, 'w') as f:
             f.write(code + '\n')
-        return subprocess.run(["g++", "-w", "-std=c++20", "-I", os.getcwd(), "-o", self.executable_file, self.code_file], capture_output=True).stderr.decode('utf-8')
+        while True:
+            with open(self.code_file, 'r') as f:
+                content = f.read()
+                if content == code + '\n':
+                    break
+            time.sleep(0.5)
+        result = subprocess.run(["g++", "-w", "-std=c++20", "-I", os.getcwd(), "-o", self.executable_file, self.code_file], capture_output=True).stderr.decode('utf-8')
+        time.sleep(0.5)
+        return result
     
     def run(self, code: str, test_input: str):
         compile_error = self.compile(code).strip()

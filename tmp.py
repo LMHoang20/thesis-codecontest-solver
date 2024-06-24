@@ -1,16 +1,9 @@
-r, x, y, xx, yy = map(int, input().split())
+with open("/Users/hoangle/Other/thesis/thesis-codecontest-solver/notes/prompt.tex", "r") as f:
+    content = f.read()
 
-r *= 2
-dist = (x - xx) ** 2 + (y - yy) ** 2
-r *= r
+content = content.split('\n')
 
-L, R = 0, 1000000
-while R > L:
-    mid = L + (R - L) // 2
-    temp = mid * mid * r
-    if temp >= dist:
-        R = mid
-    else:
-        L = mid + 1
-
-print(R)
+for i in range(8):
+    for j in range(10):
+        print('& ' + content[i+j*8], end=' ')
+    print()

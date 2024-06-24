@@ -1,0 +1,3 @@
+Let $cnt_x$ be the number of occurrences of the number $x$ in the given array (it is easy to see that we can ignore the numbers greater than $m$). Let us iterate over $x = \overline{1, m}$ and $1 \le k, x\times k \le m$ and increase the value in the position $k\times x$ in some array $z$ by the value $cnt_x$. Thus, the value $z_l$ equals the number of numbers in the given array which divide $l$. Let us find the minimal $l$ with the maximum value $z_l$ ($1 \le l \le m$). It is easy to see that the answer to the problem is the numbers which divide $l$.
+Let us calculate the complexity of the solution. The number of the pairs $(k, x)$ can be bounded by the value $m + m/2 + m/3 + ... + m/m = O(m \log m)$.
+Complexity: $O(n + m \log m)$.

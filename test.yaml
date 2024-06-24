@@ -1,43 +1,50 @@
+
 ---
-points:
-- name: Relevancy
-    editorial: |
-        In this problem we have an array $a_1, \ldots, a_n$, we can increase each $a_i$ by one with cost $t_i$, and we want to make all $a_i$ different with minimal total cost.
-    code: |
-        int n;
-        cin >> n;
-        for (int i = 0; i <= n - 1; i++) {
-            cin >> ara[i].first;
+analysis: |
+    The code solution is not clean. It has several redundant code blocks and uses a lot of nested if-else statements. The code solution could be more readable by extracting the logic into smaller functions.
+    The code solution uses `string(n, 'c')` to create a string of length `n` filled with character `c`. This is a good practice, but the code solution could be more readable by using a separate function to create the string.
+    The code solution uses `cout << endl;` to print a newline character at the end of the output. This is not necessary, as the default behavior of `cout` is to print a newline character at the end of the output.
+follows_instructions: true
+is_clean: false
+refactored_code: |
+    #include <iostream>
+    #include <string>
+    using namespace std;
+    
+    string create_string(char c, int n) {
+        return string(n, c);
+    }
+    
+    string generate_string(int a, int b, int x) {
+        string result;
+        if (x % 2 == 0) {
+            if (a > b) {
+                result += create_string("01", x / 2);
+                result += create_string('1', b - x / 2);
+                result += create_string('0', a - x / 2);
+            } else {
+                result += create_string("10", x / 2);
+                result += create_string('0', a - x / 2);
+                result += create_string('1', b - x / 2);
+            }
+        } else {
+            if (a > b) {
+                result += create_string("01", x / 2);
+                result += create_string('0', a - x / 2);
+                result += create_string('1', b - x / 2);
+            } else {
+                result += create_string("10", x / 2);
+                result += create_string('1', b - x / 2);
+                result += create_string('0', a - x / 2);
+            }
         }
-        for (int i = 0; i <= n - 1; i++) {
-            cin >> ara[i].second;
-        }
-    add point: YES
-- name: Core
-    editorial: |
-        Let's sort $a_i$ in a non-decreasing way (and permute the $t$ in a corresponding way). Let's see at the minimal number, $a_1$. If it is unique, e.g. $a_1 \ne a_2$, then we don't need to change $a_1$ — it is already unique, and it can't get equal to something else if we don't increase it.
-    code: |
-        sort(ara, ara + n, [](pair<int, int> x, pair<int, int> y) {
-            return (x.first == y.first) ? x.second > y.second : x.first < y.first;
-        });
-    add point: YES
-- name: Detail
-    editorial: |
-        This effectively reduces our problem to the smaller one, decreasing $n$ by one.
-    code: |
-        if (!que.empty()) {
-            sum -= que.top();
-            que.pop();
-            prin += sum;
-            cp++;
-            i--;
-        }
-    add point: YES
-- name: Perfect
-    reasoning: |
-        The code is splitted into two sections. The first section sorts the input and finds the minimum value of a_i. The second section implements the editorial's idea of increasing all other minimums by one and removing the maximum value t_l among all elements with minimal a_l.
-    add point: YES
-- name: Readability
-    reasoning: |
-        The code is short, uses a standard C++ library, and is easy to understand.
-    add point: YES
+        return result;
+    }
+    
+    int main() {
+        int a, b, x;
+        cin >> a >> b >> x;
+        cout << generate_string(a, b, x) << endl;
+        return 0;
+    }
+```
