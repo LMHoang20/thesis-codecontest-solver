@@ -26,7 +26,7 @@ def get_editorials():
     cursor = connection.cursor()
     cursor.execute("""
         SELECT c.name, c.description, c.editorial, c.solutions, c.split
-        FROM cleaned_editorials c LEFT JOIN refactored_editorials r ON c.name = r.name
+        FROM cleaned_editorials c LEFT JOIN translated_editorials r ON c.name = r.name
         WHERE split in ('train', 'validate') AND r.name IS NULL
         ORDER BY c.name
     """)
@@ -35,27 +35,23 @@ def get_editorials():
     connection.close()
     return editorials
 
-def create_table_refactored():
+def create_table_translated():
     connection = get_db_conn()
     cursor = connection.cursor()
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS refactored_editorials (
+    CREATE TABLE IF NOT EXISTS translated_editorials (
         name TEXT PRIMARY KEY,
         code TEXT,
-        language TEXT,
-        refactored_code TEXT,
-        follows_instructions BOOLEAN,
-        is_clean BOOLEAN
     )
 """)
     connection.commit()
     cursor.close()
     connection.close()
 
-def insert_refactored_editorial(name, code, language, refactored_code, follows_instructions, is_clean):
+def insert_translated_editorial(name, code, language, translated_code, follows_instructions, is_clean):
     connection = get_db_conn()
     cursor = connection.cursor()
-    cursor.execute("INSERT INTO refactored_editorials VALUES (%s, %s, %s, %s, %s, %s)", (name, code, language, refactored_code, follows_instructions, is_clean))
+    cursor.execute("INSERT INTO translated_editorials VALUES (%s, %s, %s, %s, %s, %s)", (name, code, language, translated_code, follows_instructions, is_clean))
     connection.commit()
     cursor.close()
     connection.close()
@@ -80,7 +76,7 @@ def generate(model, logger, document):
 # What to do:
 - Read and understand the problem statement, natural language solution, and code solution carefully.
 - Give an analysis whether the code solution is clean and follows the instructions in the natural language solution.
-- If the code solution should be refactored, refactor the code solution to make it more readable and follow the instructions in the natural language solution.
+- If the code solution should be translated, refactor the code solution to make it more readable and follow the instructions in the natural language solution.
     - Split complicated logic into smaller functions (without compromising the efficiency).
     - Remove any template for custom input and output and use standard input and output (e.g., {input_output}).
     - If the code solution is in {bad_language}, refactor it to use {language}. For example, changing {bad_input_output} to {input_output}.
@@ -94,7 +90,7 @@ The root MUST be a dictionary with 4 keys:
 - 'analysis': a multiline string that explains why the code solution is clean or not clean.
 - 'follows_instructions': a boolean that indicates whether the code solution follows the instructions in the natural language solution.
 - 'is_clean': a boolean that indicates whether the code solution is clean.
-- 'refactored_code': a multiline string that contains the refactored code solution, null if the code solution is clean.
+- 'translated_code': a multiline string that contains the translated code solution, null if the code solution is clean.
 
 # Example:
 ```yaml
@@ -104,7 +100,7 @@ analysis: |
     The code contains scanf and printf, which are not allowed. The code should use cin and cout instead.
 follows_instructions: true
 is_clean: false
-refactored_code: |
+translated_code: |
     #include <iostream>
     using namespace std;
     
@@ -154,21 +150,21 @@ refactored_code: |
         response = response.strip()
     response = response[response.index("follows_instructions:"):]
     response = yaml.safe_load(response)
-    follows_instructions, is_clean, refactored_code = response['follows_instructions'], response['is_clean'], response['refactored_code']
+    follows_instructions, is_clean, translated_code = response['follows_instructions'], response['is_clean'], response['translated_code']
     if not response['follows_instructions']:
         logger.warning(f"{name} does not follow instructions")
     if not response['is_clean']:
-        refactored_code = refactored_code.strip()
-        if refactored_code.startswith("```"):
-            refactored_code = refactored_code.split('\n')[1:]
-            refactored_code = '\n'.join(refactored_code)
-            refactored_code = refactored_code.strip()
-        if refactored_code.endswith("```"):
-            refactored_code = refactored_code[:-len("```")]
-            refactored_code = refactored_code.strip()
+        translated_code = translated_code.strip()
+        if translated_code.startswith("```"):
+            translated_code = translated_code.split('\n')[1:]
+            translated_code = '\n'.join(translated_code)
+            translated_code = translated_code.strip()
+        if translated_code.endswith("```"):
+            translated_code = translated_code[:-len("```")]
+            translated_code = translated_code.strip()
     else:
-        refactored_code = code
-    return name, code, language, refactored_code, follows_instructions, is_clean
+        translated_code = code
+    return name, code, language, translated_code, follows_instructions, is_clean
 
 def parse_result(results):
     verdict = 'PASSED'
@@ -185,113 +181,13 @@ def parse_result(results):
             break
     return (verdict, stdout, test_input, test_output)
 
-def debug(model, logger, document, code, refactored_code, results):
-    name, description, editorial, solutions, _ = document
-    language = solutions[0].strip().split('\n')[0]
-    assert language == '```cpp' or language == '```py', f"{name} has invalid language"
-    if language == '```cpp':
-        language = 'C++'
-    else:
-        language = 'Python'
-    verdict, stdout, test_input, test_output = parse_result(results)
-    system_prompt = f"""System: You are a legendary grandmaster on Codeforces. You are given the following problem, with its natural language solution, actual code solution and refactored code solution in {language}.
-# What to do:
-- Read and understand the problem statement, natural language solution, and actual code solution carefully.
-- Read the refactored code solution and analyze why the refactored code is wrong.
-- Fix the refactored code solution to make it correct and clean.
-
-# Answer format:
-You MUST answer in yaml format.
-The root MUST be a dictionary with 2 keys:
-- 'analysis': a multiline string that explains why the code solution is wrong and how you fixed it.
-- 'fixed code': a multiline string that contains the fixed code solution.
-
-# Example:
-```yaml
----
-analysis: |
-    The solution uses the wrong formula for the sum of 1 to n. The correct formula is n * (n + 1) / 2.
-fixed code: |
-    def sum_of_n(n):
-        return n * (n + 1) // 2
-    def main():
-        n = int(input())
-        print(sum_of_n(n))
-```
-
-# Note:
-- The answer MUST be a valid yaml format.
-- Use | instead of > for multiline strings.
-- Do NOT use bullet points, numbering, etc. in multiline strings to avoid yaml formatting issues.
-"""
-    user_prompt = f"""User: Help me fix the following code solution in {language}.
-<Description><![CDATA[
-{description}
-]]></Description>
-<Editorial><![CDATA[
-{editorial}
-]]></Editorial>
-<ActualCode><![CDATA[
-{code}
-]]></ActualCode>
-<RefactoredCode><![CDATA[
-{refactored_code}
-]]></RefactoredCode>
-<Results>
-<Verdict><![CDATA[
-{verdict}
-]]></Verdict>
-<TestInput><![CDATA[
-{test_input}
-]]></TestInput>
-<TestOutput><![CDATA[
-{test_output}
-]]></TestOutput>
-<Stdout><![CDATA[
-{stdout}
-]]></Stdout>
-</Results>
-"""
-    init_assistant_prompt = "```yaml\n---\nanalysis: |\n"
-    system_prompt = remove_consecutive_line_breaks(system_prompt)
-    user_prompt = remove_consecutive_line_breaks(user_prompt)
-    prompts = [
-        {"role": "system", "content": system_prompt},
-        {"role": "user", "content": user_prompt},
-        {"role": "assistant", "content": init_assistant_prompt}
-    ]
-    print(user_prompt)
-    response = model.generate(prompts)
-    response = response.strip()
-    if not response.startswith(init_assistant_prompt):
-        response = init_assistant_prompt + '    ' + response
-        response = response.strip()
-    while response.startswith("```yaml"):
-        response = response[len("```yaml"):]
-        response = response.strip()
-    while response.endswith("```"):
-        response = response[:-len("```")]
-        response = response.strip()
-    print(response)
-    response = response[response.index("fixed code:"):]
-    response = yaml.safe_load(response)
-    code = response['fixed code']
-    while code.startswith('```'):
-        code = code.split('\n')[1:]
-        code = '\n'.join(code)
-        code = code.strip()
-    while code.endswith('```'):
-        code = code[:-len('```')]
-        code = code.strip()
-    return code
-
 if __name__ == '__main__':
     # model = Gemini(temperature=1, top_p=0.5, top_k=10)
     model = GPT(model_name='gpt-3.5-turbo', temperature=0.5, top_p=0.8, max_tokens=4096, frequency_penalty=0, presence_penalty=0)
     editorials = get_editorials()
     logger = get_logger(type='file', config={'name': '', 'path': 'logs/clean_code-2.log', 'threadsafe': False})
     problem_repo = Problem(get_db_conn())
-    create_table_refactored()
+    create_table_translated()
     api = APICommunication(server_url = "http://localhost:5001")
     content = open('logs/clean_code.log', 'r').read()
     for editorial in editorials:
@@ -319,12 +215,12 @@ if __name__ == '__main__':
             logger.error(f"{name} original code failed")
             continue
         try:
-            name, code, language, refactored_code, follows_instructions, is_clean = generate(model, logger, editorial)
+            name, code, language, translated_code, follows_instructions, is_clean = generate(model, logger, editorial)
             if not is_clean:
                 language = LANGUAGE_MAPPING[language]
                 result = api.execute_code(
                     language=language,
-                    source_code=refactored_code,
+                    source_code=translated_code,
                     unittests=tests,
                     limits=limits_by_lang[language],
                     stop_on_first_fail=True
@@ -332,7 +228,7 @@ if __name__ == '__main__':
                 # if any(result[0][i]['exec_outcome'] != 'PASSED' for i in range(len(result[0]))):
                 #     logger.error(f"{name} failed")
                 #     for _ in range(3):
-                #         debugged_code = debug(model, logger, editorial, code, refactored_code, result)
+                #         debugged_code = debug(model, logger, editorial, code, translated_code, result)
                 #         debugged_result = api.execute_code(
                 #             language=language,
                 #             source_code=debugged_code,
@@ -344,14 +240,14 @@ if __name__ == '__main__':
                 #             logger.error(f"{name} failed {_ + 1} times")
                 #         else:
                 #             logger.info(f"{name} passed after {_ + 1} attempts")
-                #             insert_refactored_editorial(name, code, language, debugged_code, follows_instructions, is_clean)
+                #             insert_translated_editorial(name, code, language, debugged_code, follows_instructions, is_clean)
                 #             break
                 # else:
                 #     logger.info(f"{name} passed")
-                #     insert_refactored_editorial(name, code, language, refactored_code, follows_instructions, is_clean)
+                #     insert_translated_editorial(name, code, language, translated_code, follows_instructions, is_clean)
             else:
                 logger.info(f"{name} is clean")
-                insert_refactored_editorial(name, code, language, refactored_code, follows_instructions, is_clean)
+                insert_translated_editorial(name, code, language, translated_code, follows_instructions, is_clean)
         except Exception as e:
             logger.error(f"{name} failed with error: {e}")
             continue

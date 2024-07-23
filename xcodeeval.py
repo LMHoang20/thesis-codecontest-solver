@@ -12,6 +12,7 @@ validate_dataset = datasets.load_dataset(dataset_id, split = 'validate')
 print(len(train_dataset), len(validate_dataset))
 print(train_dataset)
 print(validate_dataset)
+print(train_dataset[0]['mini_prompt'])
 
 # for sample in dataset:
 #     print(sample['prompt'])
